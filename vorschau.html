@@ -51,13 +51,29 @@
     .slider-label.links{left:14px}.slider-label.rechts{right:14px}
     .hinweis-mini{font-size:.85rem;color:var(--ink-soft);margin-top:.8rem;text-align:center}
 
-    .phones{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,3rem);margin-top:2.5rem;align-items:start}
-    .phone{background:var(--espresso);border-radius:34px;padding:14px;box-shadow:0 18px 50px rgba(42,31,23,.28);max-width:320px;margin-inline:auto}
-    .phone .kerbe{width:86px;height:14px;background:var(--espresso);border-radius:0 0 12px 12px;margin:-2px auto 6px;position:relative;z-index:2}
-    .phone .schirm{border-radius:22px;overflow:hidden}
-    .phone-titel{text-align:center;font-weight:600;margin-top:1rem}
-    .phone-sub{text-align:center;font-size:.85rem;color:var(--ink-soft)}
-    @media (max-width:680px){.phones{grid-template-columns:1fr}}
+    /* Handy-Reframe: kompakte, realistische Mockups (passen komplett in einen Laptop-Viewport) */
+    .phones{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,3rem);margin-top:2.5rem;align-items:start;max-width:640px;margin-inline:auto}
+    .phone{position:relative;background:linear-gradient(160deg,#241a13,#150f0a);border-radius:40px;padding:9px;
+      box-shadow:0 24px 50px rgba(42,31,23,.32), inset 0 0 0 1.5px rgba(255,255,255,.10);max-width:252px;margin-inline:auto}
+    .phone::before{ /* Seitentasten links */
+      content:"";position:absolute;left:-2.5px;top:96px;width:2.5px;height:58px;border-radius:2px 0 0 2px;
+      background:#150f0a;box-shadow:0 78px 0 #150f0a;
+    }
+    .phone::after{ /* Power-Taste rechts */
+      content:"";position:absolute;right:-2.5px;top:128px;width:2.5px;height:74px;border-radius:0 2px 2px 0;background:#150f0a;
+    }
+    .phone .schirm{position:relative;border-radius:32px;overflow:hidden;background:#fff}
+    .phone .schirm::before{ /* Dynamic Island */
+      content:"";position:absolute;top:9px;left:50%;transform:translateX(-50%);
+      width:70px;height:19px;border-radius:999px;background:#150f0a;z-index:2;
+    }
+    .phone .schirm img{width:100%;height:auto;display:block}
+    .phone-titel{text-align:center;margin-top:1.1rem}
+    .phone-titel span{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+      padding:.4rem .95rem;border-radius:999px;background:rgba(42,31,23,.82);color:#fff}
+    .phone-titel.neu span{background:var(--kupfer)}
+    .phone-sub{text-align:center;font-size:.85rem;color:var(--ink-soft);margin-top:.55rem;max-width:30ch;margin-inline:auto}
+    @media (max-width:680px){.phones{grid-template-columns:1fr;gap:2.5rem}.phone{max-width:235px}}
 
     .tacho{background:var(--espresso);color:#EFE6D8;text-align:center}
     .tacho h2{color:#fff}
@@ -128,17 +144,17 @@
     <p class="lead" style="margin-top:1rem">Über 60&nbsp;% aller Website-Besuche kommen heute vom Smartphone (StatCounter). Genau dort entscheidet sich, ob jemand bucht.</p>
     <div class="phones">
       <div>
-        <div class="phone"><div class="kerbe"></div><div class="schirm">
-          <img src="assets/vergleich/alt-mobil.jpg" alt="Bisherige AUTUMNA-Website auf dem Smartphone" width="390" height="800">
+        <div class="phone"><div class="schirm">
+          <img src="assets/vergleich/alt-mobil.jpg" alt="Bisherige AUTUMNA-Website auf dem Smartphone" width="500" height="1060">
         </div></div>
-        <p class="phone-titel">Heute</p>
+        <p class="phone-titel"><span>Heute</span></p>
         <p class="phone-sub">Headline schwer lesbar, Inhalte brauchen fast 10 Sekunden</p>
       </div>
       <div>
-        <div class="phone"><div class="kerbe"></div><div class="schirm">
-          <img src="assets/vergleich/neu-mobil.jpg" alt="Neuer AUTUMNA-Entwurf auf dem Smartphone" width="390" height="800">
+        <div class="phone"><div class="schirm">
+          <img src="assets/vergleich/neu-mobil.jpg" alt="Neuer AUTUMNA-Entwurf auf dem Smartphone" width="500" height="1060">
         </div></div>
-        <p class="phone-titel">Unser Entwurf</p>
+        <p class="phone-titel neu"><span>Unser Entwurf</span></p>
         <p class="phone-sub">Dein Studio sofort sichtbar, in unter 2 Sekunden — mit Anruf-Leiste am Daumen</p>
       </div>
     </div>
