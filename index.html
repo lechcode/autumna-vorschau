@@ -36,6 +36,10 @@
   <link rel="preload" href="assets/fonts/fraunces-italic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/figtree-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/figtree-600.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Hero-Foto preloaden (LCP): AVIF responsive — JPEG-Fallback lädt nur in Alt-Browsern -->
+  <link rel="preload" as="image" type="image/avif"
+        imagesrcset="assets/img/hero-400.avif 400w, assets/img/hero-800.avif 800w, assets/img/hero-1200.avif 1200w, assets/img/hero-1600.avif 1600w"
+        imagesizes="(max-width: 900px) 92vw, 44vw">
   <link rel="stylesheet" href="assets/fonts.css">
   <script type="application/ld+json">
   {
@@ -53,6 +57,7 @@
       "postalCode": "86899",
       "addressCountry": "DE"
     },
+    "image": "https://lechcode.github.io/autumna-vorschau/assets/img/hero-1200.jpg",
     "priceRange": "Kurse ab 17,50 €, Gutscheine ab 15 €",
     "areaServed": "Landsberg am Lech",
     "sameAs": [
@@ -196,9 +201,9 @@
   .hero-fakten{display:flex;flex-wrap:wrap;gap:.6rem 1.6rem;margin-top:var(--sp-4);padding:0;list-style:none;font-size:var(--fs-xs);color:var(--ink-soft)}
   .hero-fakten li{display:flex;align-items:center;gap:.5rem}
   .hero-fakten svg{width:15px;height:15px;flex:none}
-  /* Bild-Slot exakt im 3:2-Format des echten Hero-Fotos (343942.webp) — 1-Klick-Tausch bei Beauftragung */
+  /* Bild-Slot im 3:2-Format des Hero-Fotos (343942) */
   .hero-buehne{aspect-ratio:3/2;border-radius:var(--radius);overflow:hidden;box-shadow:var(--schatten);position:relative}
-  .hero-buehne svg{width:100%;height:100%}
+  .hero-buehne img{width:100%;height:100%;object-fit:cover}
   /* Staffel-Einblendung beim Laden (nur mit JS, reduced-motion: aus) */
   .js .hero .stufe{opacity:0;transform:translateY(18px);animation:aufstehen .8s var(--ease) forwards}
   .js .hero .stufe:nth-child(2){animation-delay:.12s}
@@ -243,7 +248,11 @@
 
   /* ═══════ 8 · KURSE & BUCHUNG ═══════ */
   .kurse{background:var(--sand)}
-  .kursliste{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-2);margin-top:var(--sp-4);list-style:none}
+  .kurse-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(2rem,4vw,3.5rem);align-items:center;margin-top:var(--sp-4)}
+  .kurse-foto{aspect-ratio:2/3;border-radius:var(--radius);overflow:hidden;box-shadow:var(--schatten);max-width:360px;justify-self:end}
+  .kurse-foto img{width:100%;height:100%;object-fit:cover}
+  @media (max-width:900px){.kurse-grid{grid-template-columns:1fr}.kurse-foto{justify-self:center;max-width:300px}}
+  .kursliste{display:grid;grid-template-columns:1fr;gap:var(--sp-2);list-style:none}
   .kurs{
     background:var(--creme);border-radius:var(--radius-s);padding:1.2rem 1.4rem;
     display:flex;justify-content:space-between;align-items:center;gap:1rem;border:1px solid var(--sand-tief);
@@ -270,7 +279,10 @@
   .ueber-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
   /* Slot exakt im 2:3-Format des echten Porträts (346633.webp) */
   .portraet{aspect-ratio:2/3;border-radius:var(--radius);overflow:hidden;box-shadow:var(--schatten);max-width:420px}
-  .portraet svg{width:100%;height:100%}
+  .portraet img{width:100%;height:100%;object-fit:cover}
+  /* Galerie-Band (346781: 8er-Collage der Altseite) */
+  .band{padding-block:0}
+  .band img{width:100%;height:auto;border-radius:var(--radius);box-shadow:var(--schatten)}
   .ueber-text p + p{margin-top:1rem}
   .ueber-text .merkmale{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:var(--sp-3);padding:0;list-style:none}
   .ueber-text .merkmale li{font-size:var(--fs-xs);font-weight:600;background:var(--sand);border:1px solid var(--sand-tief);border-radius:999px;padding:.45rem .95rem}
@@ -481,54 +493,14 @@
         <li><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 10.5 8 15 17 5" stroke="#9C5530" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>5,0&nbsp;★ · 32 Google-Rezensionen</li>
       </ul>
     </div>
-    <!-- HIER: Bei Beauftragung ersetzt das echte Hero-Foto (alt-assets/343942.webp, 3:2) dieses SVG-Motiv -->
-    <div class="hero-buehne" role="img" aria-label="Stilisierte Illustration: Licht fällt durch ein Rundbogenfenster der Katharinenvilla auf Fischgrätparkett">
-      <svg viewBox="0 0 900 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <defs>
-          <linearGradient id="wand" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#F6EEE2"/><stop offset="1" stop-color="#EADDC9"/>
-          </linearGradient>
-          <linearGradient id="lichtkegel" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#F3D9A8" stop-opacity=".85"/><stop offset="1" stop-color="#F3D9A8" stop-opacity="0"/>
-          </linearGradient>
-          <linearGradient id="boden" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#C99A66"/><stop offset="1" stop-color="#A87B4D"/>
-          </linearGradient>
-          <pattern id="fischgraet" width="64" height="32" patternUnits="userSpaceOnUse" patternTransform="scale(1.4)">
-            <rect width="64" height="32" fill="none"/>
-            <path d="M0 32 32 0M16 32 48 0M32 32 64 0" stroke="#8F6336" stroke-width="1.1" opacity=".5"/>
-            <path d="M32 32 0 0M48 32 16 0M64 32 32 0" stroke="#7C5026" stroke-width="1.1" opacity=".35"/>
-          </pattern>
-        </defs>
-        <rect width="900" height="430" fill="url(#wand)"/>
-        <rect y="430" width="900" height="170" fill="url(#boden)"/>
-        <rect y="430" width="900" height="170" fill="url(#fischgraet)"/>
-        <rect y="424" width="900" height="10" fill="#FBF4E8" opacity=".7"/>
-        <!-- Rundbogenfenster -->
-        <g transform="translate(560,70)">
-          <path d="M0 360 V120 a110 110 0 0 1 220 0 V360 Z" fill="#FDF6E7"/>
-          <path d="M0 360 V120 a110 110 0 0 1 220 0 V360" fill="none" stroke="#B89265" stroke-width="10"/>
-          <path d="M110 14 V360 M2 170 h216 M14 96 a106 106 0 0 1 192 0" stroke="#C8A87C" stroke-width="5" fill="none"/>
-          <circle cx="62" cy="80" r="30" fill="#F6DFA9" opacity=".9"/>
-        </g>
-        <!-- Lichtkegel auf den Boden -->
-        <path d="M560 430 L500 600 H880 L780 430 Z" fill="url(#lichtkegel)"/>
-        <!-- Pflanze links -->
-        <g transform="translate(120,290)" stroke="#5F6549" stroke-width="6" fill="none" stroke-linecap="round">
-          <path d="M60 140 C 58 90, 30 70, 10 40"/>
-          <path d="M60 140 C 64 85, 90 75, 112 50"/>
-          <path d="M60 140 C 60 100, 60 70, 60 30"/>
-          <path d="M10 40 c -4 14, 4 22, 16 24 M112 50 c 6 12, 0 24, -14 26 M60 30 c -10 8, -8 22, 2 28"/>
-        </g>
-        <ellipse cx="180" cy="445" rx="90" ry="12" fill="#7C5026" opacity=".35"/>
-        <path d="M130 432 h100 l-10 92 h-80 Z" fill="#A4744A"/>
-        <!-- Liege (Andeutung der IHHT-Liege) -->
-        <g transform="translate(280,360)">
-          <path d="M0 78 C 30 70, 60 40, 95 28 C 130 16, 180 12, 215 22 L 222 50 C 180 44, 130 48, 100 60 C 70 72, 40 86, 10 92 Z" fill="#F4ECDF" stroke="#D9CBB4" stroke-width="3"/>
-          <rect x="24" y="88" width="10" height="42" rx="4" fill="#8F6336"/>
-          <rect x="180" y="60" width="10" height="70" rx="4" fill="#8F6336"/>
-        </g>
-      </svg>
+    <!-- HIER: Hero-Foto (Original der Altseite, web-optimiert — Master-Prompt v1.7) -->
+    <div class="hero-buehne">
+      <picture>
+        <source type="image/avif" srcset="assets/img/hero-400.avif 400w, assets/img/hero-800.avif 800w, assets/img/hero-1200.avif 1200w, assets/img/hero-1600.avif 1600w" sizes="(max-width: 900px) 92vw, 44vw">
+        <img src="assets/img/hero-1200.jpg" srcset="assets/img/hero-400.jpg 400w, assets/img/hero-800.jpg 800w, assets/img/hero-1200.jpg 1200w, assets/img/hero-1600.jpg 1600w" sizes="(max-width: 900px) 92vw, 44vw"
+             width="1620" height="1080" fetchpriority="high" decoding="async"
+             alt="Lichtdurchfluteter Raum der AUTUMNA Longevity Lounge in der Katharinenvilla: IHHT-Liege auf Fischgrätparkett vor hohem Altbaufenster">
+      </picture>
     </div>
   </div>
 </header>
@@ -609,17 +581,29 @@
       <h2>Finde deine Stunde</h2>
       <p class="sub">Alle Kurse finden in kleinen Gruppen statt — du buchst bequem online und siehst sofort, wo noch ein Platz frei ist.</p>
     </div>
-    <ul class="kursliste reveal">
-      <!-- HIER: Kursliste & Zeiten — Stand 12.06.2026 laut Fyndery-Kursplan (bei Änderungen hier UND im Kalender-Link prüfen) -->
-      <li class="kurs"><strong>Pilates — alle Level</strong><span>Di 18:30 · Fr 17:00</span></li>
-      <li class="kurs"><strong>Soft Pilates: Mobilität &amp; Stabilität</strong><span>Fr 15:45 · für Anfänger</span></li>
-      <li class="kurs"><strong>Yin Yoga: sanfte Entspannung</strong><span>Mi 19:30</span></li>
-      <li class="kurs"><strong>After Work Relaxation</strong><span>Di 16:30</span></li>
-    </ul>
-    <p class="angebot-zeile reveal" style="margin-top:1.2rem">Alle Kurse: <strong>max. 6 Teilnehmende</strong> · Einzeltermin ab 17,50&nbsp;€ · Mehrfachkarten online buchbar</p>
-    <div class="buchen-box reveal">
-      <p><strong>Online buchen wie gewohnt:</strong> Kursplan, freie Plätze und Mehrfachkarten findest du im Buchungskalender von AUTUMNA — er bleibt beim Umstieg auf die neue Website genau derselbe.</p>
-      <a class="btn btn-voll" href="https://www.autumna-landsberg.de/#Kalender" target="_blank" rel="noopener">Kursplan öffnen</a>
+    <div class="kurse-grid">
+      <div>
+        <ul class="kursliste reveal">
+          <!-- HIER: Kursliste & Zeiten — Stand 12.06.2026 laut Fyndery-Kursplan (bei Änderungen hier UND im Kalender-Link prüfen) -->
+          <li class="kurs"><strong>Pilates — alle Level</strong><span>Di 18:30 · Fr 17:00</span></li>
+          <li class="kurs"><strong>Soft Pilates: Mobilität &amp; Stabilität</strong><span>Fr 15:45 · für Anfänger</span></li>
+          <li class="kurs"><strong>Yin Yoga: sanfte Entspannung</strong><span>Mi 19:30</span></li>
+          <li class="kurs"><strong>After Work Relaxation</strong><span>Di 16:30</span></li>
+        </ul>
+        <p class="angebot-zeile reveal" style="margin-top:1.2rem;text-align:left">Alle Kurse: <strong>max. 6 Teilnehmende</strong> · Einzeltermin ab 17,50&nbsp;€ · Mehrfachkarten online buchbar</p>
+        <div class="buchen-box reveal">
+          <p><strong>Online buchen wie gewohnt:</strong> Kursplan, freie Plätze und Mehrfachkarten findest du im Buchungskalender von AUTUMNA — er bleibt mit der neuen Website genau derselbe.</p>
+          <a class="btn btn-voll" href="https://www.autumna-landsberg.de/#Kalender" target="_blank" rel="noopener">Kursplan öffnen</a>
+        </div>
+      </div>
+      <div class="kurse-foto reveal">
+        <picture>
+          <source type="image/avif" srcset="assets/img/detail-400.avif 400w, assets/img/detail-720.avif 720w" sizes="(max-width: 900px) 300px, 360px">
+          <img src="assets/img/detail-720.jpg" srcset="assets/img/detail-400.jpg 400w, assets/img/detail-720.jpg 720w" sizes="(max-width: 900px) 300px, 360px"
+               width="720" height="1080" loading="lazy" decoding="async"
+               alt="Liebevoll vorbereitetes Detail im Studio: gerollte Handtücher, kleine Hanteln und ein gerahmtes Schmetterlingsbild">
+        </picture>
+      </div>
     </div>
   </div>
 </section>
@@ -638,36 +622,14 @@
 <!-- ═══════ ÜBER GWEN ═══════ -->
 <section id="ueber">
   <div class="wrap ueber-grid">
-    <!-- HIER: Bei Beauftragung ersetzt Gwens echtes Porträt (alt-assets/346633.webp, 2:3) dieses SVG-Motiv -->
-    <div class="portraet reveal" role="img" aria-label="Stilisierte Illustration: die historische Tür der Katharinenvilla mit Pflanze und warmem Licht">
-      <svg viewBox="0 0 400 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <defs>
-          <linearGradient id="pwand" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#F4ECDF"/><stop offset="1" stop-color="#E6D7C0"/>
-          </linearGradient>
-          <linearGradient id="ptuer" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="#9C6B3F"/><stop offset="1" stop-color="#7C5026"/>
-          </linearGradient>
-        </defs>
-        <rect width="400" height="600" fill="url(#pwand)"/>
-        <rect y="470" width="400" height="130" fill="#B98A57"/>
-        <path d="M0 470 H400" stroke="#FBF4E8" stroke-width="6" opacity=".6"/>
-        <g transform="translate(60,80)">
-          <path d="M0 390 V90 a140 140 0 0 1 280 0 V390 Z" fill="url(#ptuer)"/>
-          <path d="M0 390 V90 a140 140 0 0 1 280 0 V390" fill="none" stroke="#5E3A18" stroke-width="8"/>
-          <path d="M140 -45 V390 M30 150 h220 M30 260 h220" stroke="#5E3A18" stroke-width="5" opacity=".8"/>
-          <rect x="36" y="156" width="88" height="98" rx="6" fill="#F6DFA9" opacity=".5"/>
-          <rect x="156" y="156" width="88" height="98" rx="6" fill="#F6DFA9" opacity=".35"/>
-          <circle cx="118" cy="316" r="7" fill="#C29B5E"/>
-        </g>
-        <g transform="translate(305,360)" stroke="#5F6549" stroke-width="5" fill="none" stroke-linecap="round">
-          <path d="M30 130 C 26 90, 8 76, -4 50"/>
-          <path d="M30 130 C 34 86, 52 78, 64 54"/>
-          <path d="M-4 50 c -4 12, 2 20, 12 22 M64 54 c 4 12, -2 20, -12 22"/>
-        </g>
-        <path d="M270 492 h120 l-8 70 h-104 Z" fill="#A4744A"/>
-        <circle cx="84" cy="60" r="26" fill="#F6DFA9" opacity=".65"/>
-      </svg>
+    <!-- HIER: Gwens Porträt (Original der Altseite, web-optimiert — Master-Prompt v1.7) -->
+    <div class="portraet reveal">
+      <picture>
+        <source type="image/avif" srcset="assets/img/gwen-400.avif 400w, assets/img/gwen-717.avif 717w" sizes="(max-width: 900px) 86vw, 380px">
+        <img src="assets/img/gwen-717.jpg" srcset="assets/img/gwen-400.jpg 400w, assets/img/gwen-717.jpg 717w" sizes="(max-width: 900px) 86vw, 380px"
+             width="717" height="1080" loading="lazy" decoding="async"
+             alt="Gwen Herbst steht lächelnd und barfuß an der historischen Holztür der Katharinenvilla, dahinter Fischgrätparkett und Kaminofen">
+      </picture>
     </div>
     <div class="ueber-text">
       <p class="eyebrow reveal">Über Gwen</p>
@@ -708,6 +670,18 @@
         <p>Kein Abfertigen, kein Rausschieben: Nimm dir den Moment, bevor du zurück in deinen Tag gehst — spürbar ruhiger als davor.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ═══════ GALERIE-BAND ═══════ -->
+<section class="band" aria-label="Einblicke in die Lounge">
+  <div class="wrap reveal">
+    <picture>
+      <source type="image/avif" srcset="assets/img/galerie-800.avif 800w, assets/img/galerie-1600.avif 1600w, assets/img/galerie-1920.avif 1920w" sizes="(max-width: 1180px) 96vw, 1140px">
+      <img src="assets/img/galerie-1600.jpg" srcset="assets/img/galerie-800.jpg 800w, assets/img/galerie-1600.jpg 1600w, assets/img/galerie-1920.jpg 1920w" sizes="(max-width: 1180px) 96vw, 1140px"
+           width="1920" height="361" loading="lazy" decoding="async"
+           alt="Acht Einblicke in die AUTUMNA Lounge: Pilates-Training mit Ring, Stuckrosette mit Papierleuchte, Spiegelraum mit Matten, Flur und liebevolle Details">
+    </picture>
   </div>
 </section>
 
