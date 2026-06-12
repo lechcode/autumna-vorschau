@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<!--
+  ╔══════════════════════════════════════════════════════════════════╗
+  ║  AUTUMNA Longevity Lounge · Katharinenvilla Landsberg am Lech     ║
+  ║  Unverbindliche DESIGN-VORSCHAU · erstellt von Lechcode           ║
+  ║  Single-File, kein Build. Stand: 12.06.2026                       ║
+  ╠══════════════════════════════════════════════════════════════════╣
+  ║  DEMO-Modus (Kalt-Akquise): Alle Texte NEU geschrieben aus den    ║
+  ║  Fakten der Altseite (_projekt/INVENTAR.md). Keine Fotos der      ║
+  ║  Altseite deployt (Urheberrecht) — Bild-Slots sind formatgleich   ║
+  ║  zu den 20 gesicherten Originalen angelegt (1-Klick-Tausch bei    ║
+  ║  Beauftragung, siehe _projekt/beweise/ALT-ASSETS.md).             ║
+  ║  Formular versendet nichts (ehrlicher Demo-Hinweis sichtbar).     ║
+  ║  Offene Punkte: _projekt/OFFENE-FRAGEN.md                         ║
+  ║  Pflege-Stellen: Suche nach „HIER:"                               ║
+  ╚══════════════════════════════════════════════════════════════════╝
+-->
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>document.documentElement.classList.add('js');if(location.search.indexOf('foto')>-1)document.documentElement.classList.add('foto');</script>
+  <!-- ENTFERNEN sobald Impressum+Datenschutz live & freigegeben -->
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Pilates, Yin Yoga & IHHT in Landsberg am Lech | AUTUMNA</title>
+  <meta name="description" content="AUTUMNA Longevity Lounge in der Katharinenvilla Landsberg am Lech: Pilates & Yin Yoga in kleinen Gruppen, IHHT-Zelltraining mit persönlicher Begleitung." />
+  <meta property="og:title" content="AUTUMNA Longevity Lounge — komm zur Ruhe, komm zu Kräften" />
+  <meta property="og:description" content="Pilates, Yin Yoga & IHHT-Zelltraining in der Katharinenvilla Landsberg. Kleine Gruppen, persönliche Begleitung, Tee vor jeder Stunde." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:image" content="https://lechcode.github.io/autumna-vorschau/assets/og.jpg" />
+  <meta name="theme-color" content="#2a1f17" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232a1f17'/%3E%3Cpath d='M18 50 V30 a14 14 0 0 1 28 0 V50' fill='none' stroke='%23e9ddcb' stroke-width='3'/%3E%3Cpath d='M32 19 V50 M20 36 h24' stroke='%23c29b5e' stroke-width='1.6' opacity='.85'/%3E%3C/svg%3E" />
+  <!-- Schriften lokal gehostet (DSGVO: keine Verbindung zu Google Fonts) — alle 4 preloaded gegen Layout-Shift -->
+  <link rel="preload" href="assets/fonts/fraunces-600.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/fraunces-italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/figtree-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/figtree-600.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/fonts.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "ExerciseGym"],
+    "name": "AUTUMNA Longevity Lounge",
+    "description": "Pilates, Yin Yoga und IHHT-Zelltraining in kleinen Gruppen — in der Katharinenvilla in Landsberg am Lech.",
+    "url": "https://www.autumna-landsberg.de/",
+    "telephone": "+491742124714",
+    "email": "info@autumna-landsberg.de",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Katharinenstraße 45",
+      "addressLocality": "Landsberg am Lech",
+      "postalCode": "86899",
+      "addressCountry": "DE"
+    },
+    "priceRange": "Kurse ab 17,50 €, Gutscheine ab 15 €",
+    "areaServed": "Landsberg am Lech",
+    "sameAs": [
+      "https://www.instagram.com/autumna_landsberg/",
+      "https://www.facebook.com/profile.php?id=61581112683456"
+    ]
+  }
+  </script>
+  <style>
+  /* ═══════ 1 · TOKENS — „Herbstlicht in der Villa" ═══════ */
+  :root{
+    --creme:#FAF6F0;          /* Grundton */
+    --sand:#F1E8DC;           /* Karten/Flächen */
+    --sand-tief:#E7DBCA;      /* Linien auf Sand */
+    --ink:#33261C;            /* Text — warmes Espresso */
+    --ink-soft:#5d4d3f;       /* Sekundärtext */
+    --kupfer:#9C5530;         /* Akzent/CTA (AA auf Creme) */
+    --kupfer-tief:#7f4426;    /* Hover */
+    --salbei:#5F6549;         /* Sekundärakzent, texttauglich */
+    --salbei-flaeche:#DCDFD0; /* helle Salbei-Fläche */
+    --gold:#C29B5E;           /* NUR Deko: Linien, Zitatmarken */
+    --espresso:#2A1F17;       /* Footer/dunkle Bühne */
+    --weiss:#ffffff;
+
+    --serif:'Fraunces','Fraunces Fallback',Georgia,serif;
+    --sans:'Figtree','Figtree Fallback','Helvetica Neue',Arial,sans-serif;
+
+    /* fluide Typo-Skala (Basis 17 px mobil — Zielgruppe liest gern größer) */
+    --fs-xs:clamp(.82rem, .78rem + .2vw, .92rem);
+    --fs-s:clamp(.95rem, .9rem + .25vw, 1.05rem);
+    --fs-base:clamp(1.0625rem, 1rem + .3vw, 1.1875rem);
+    --fs-m:clamp(1.2rem, 1.1rem + .5vw, 1.45rem);
+    --fs-l:clamp(1.55rem, 1.35rem + 1vw, 2.1rem);
+    --fs-xl:clamp(2rem, 1.6rem + 2vw, 3.1rem);
+    --fs-hero:clamp(2.35rem, 1.7rem + 3.2vw, 4.3rem);
+
+    --sp-1:.5rem; --sp-2:1rem; --sp-3:1.5rem; --sp-4:2.5rem; --sp-5:4rem; --sp-6:6.5rem;
+    --radius:18px; --radius-s:12px;
+    --ease:cubic-bezier(.22,.61,.25,1);
+    --schatten:0 10px 34px rgba(51,38,28,.10);
+    --maxw:1140px;
+  }
+
+  /* ═══════ 2 · BASIS ═══════ */
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:84px}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{
+    font-family:var(--sans);font-size:var(--fs-base);line-height:1.65;
+    color:var(--ink);background:var(--creme);
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  }
+  img,svg{display:block;max-width:100%}
+  a{color:var(--kupfer)}
+  a:hover{color:var(--kupfer-tief)}
+  h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.12;letter-spacing:-.01em}
+  h2{font-size:var(--fs-xl)}
+  h3{font-size:var(--fs-m)}
+  p{max-width:62ch}
+  ::selection{background:var(--gold);color:var(--espresso)}
+
+  .wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:clamp(1.1rem, 4vw, 2.2rem)}
+  section{padding-block:var(--sp-6)}
+  .eyebrow{
+    font-size:var(--fs-xs);font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--kupfer);display:flex;align-items:center;gap:.7rem;margin-bottom:var(--sp-2);
+  }
+  .eyebrow::before{content:"";width:34px;height:1px;background:var(--gold);flex:none}
+  .center .eyebrow{justify-content:center}
+  .center{text-align:center}
+  .center p{margin-inline:auto}
+  .sub{color:var(--ink-soft);font-size:var(--fs-m);max-width:54ch;margin-top:var(--sp-2)}
+
+  /* Skip-Link */
+  .skip{position:absolute;left:-999px;top:0;background:var(--espresso);color:var(--creme);
+    padding:.8rem 1.2rem;z-index:200;border-radius:0 0 var(--radius-s) 0}
+  .skip:focus{left:0}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+  /* Fokus sichtbar */
+  :focus-visible{outline:3px solid var(--kupfer);outline-offset:3px;border-radius:4px}
+
+  /* ═══════ 3 · BUTTONS ═══════ */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
+    font-family:var(--sans);font-weight:600;font-size:var(--fs-s);
+    padding:.95rem 1.7rem;border-radius:999px;text-decoration:none;cursor:pointer;
+    border:1.5px solid transparent;min-height:48px;
+    transition:transform .25s var(--ease), background .25s var(--ease), color .25s var(--ease), border-color .25s var(--ease);
+  }
+  .btn-voll{background:var(--kupfer);color:#fff}
+  .btn-voll:hover{background:var(--kupfer-tief);color:#fff;transform:translateY(-2px)}
+  .btn-zart{border-color:var(--kupfer);color:var(--kupfer);background:transparent}
+  .btn-zart:hover{background:var(--kupfer);color:#fff;transform:translateY(-2px)}
+  .btn-hell{background:var(--creme);color:var(--ink)}
+  .btn-hell:hover{background:#fff;color:var(--ink);transform:translateY(-2px)}
+
+  /* ═══════ 4 · NAVIGATION ═══════ */
+  .nav{
+    position:fixed;inset-inline:0;top:0;z-index:100;
+    transition:background .35s var(--ease), box-shadow .35s var(--ease);
+  }
+  .nav.scrolled{background:rgba(250,246,240,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(51,38,28,.08)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.9rem}
+  .marke{display:flex;flex-direction:column;line-height:1;text-decoration:none;color:var(--ink)}
+  .marke strong{font-family:var(--serif);font-weight:600;font-size:1.45rem;letter-spacing:.12em}
+  .marke span{font-size:.58rem;letter-spacing:.34em;text-transform:uppercase;color:var(--ink-soft);margin-top:.32rem}
+  .nav-links{display:flex;align-items:center;gap:1.6rem;list-style:none}
+  .nav-links a:not(.btn){color:var(--ink);text-decoration:none;font-size:var(--fs-s);font-weight:400}
+  .nav-links a:not(.btn):hover{color:var(--kupfer)}
+  .nav-links .btn{padding:.6rem 1.25rem;min-height:42px}
+  .burger{display:none;background:none;border:0;width:48px;height:48px;cursor:pointer;position:relative;z-index:130}
+  .burger span{display:block;width:26px;height:2px;background:var(--ink);margin:6px auto;transition:transform .3s var(--ease), opacity .3s var(--ease)}
+  .burger[aria-expanded="true"] span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+  .burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+  .burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+  @media (max-width:900px){
+    .nav-links{
+      position:fixed;inset:0;background:var(--creme);flex-direction:column;justify-content:center;
+      font-size:1.3rem;gap:2rem;transform:translateY(-102%);transition:transform .4s var(--ease);z-index:120;
+    }
+    .nav-links.offen{transform:translateY(0)}
+    .nav-links a:not(.btn){font-size:1.35rem}
+    .burger{display:block}
+  }
+
+  /* ═══════ 5 · HERO — Villa-Licht ═══════ */
+  .hero{
+    min-height:100svh;display:grid;align-items:center;
+    padding-block:7.5rem 4.5rem;position:relative;overflow:hidden;
+    background:
+      radial-gradient(1100px 520px at 84% -8%, rgba(194,155,94,.16), transparent 64%),
+      linear-gradient(178deg, #FDFAF5 0%, var(--creme) 46%, #F4EBDE 100%);
+  }
+  .foto .hero{min-height:auto}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+  .hero h1{font-size:var(--fs-hero);max-width:13ch}
+  .hero h1 em{font-style:italic;font-weight:400;color:var(--kupfer)}
+  .hero .lead{font-size:var(--fs-m);color:var(--ink-soft);margin-top:var(--sp-3);max-width:46ch}
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:1rem;margin-top:var(--sp-4)}
+  .hero-fakten{display:flex;flex-wrap:wrap;gap:.6rem 1.6rem;margin-top:var(--sp-4);padding:0;list-style:none;font-size:var(--fs-xs);color:var(--ink-soft)}
+  .hero-fakten li{display:flex;align-items:center;gap:.5rem}
+  .hero-fakten svg{width:15px;height:15px;flex:none}
+  /* Bild-Slot exakt im 3:2-Format des echten Hero-Fotos (343942.webp) — 1-Klick-Tausch bei Beauftragung */
+  .hero-buehne{aspect-ratio:3/2;border-radius:var(--radius);overflow:hidden;box-shadow:var(--schatten);position:relative}
+  .hero-buehne svg{width:100%;height:100%}
+  /* Staffel-Einblendung beim Laden (nur mit JS, reduced-motion: aus) */
+  .js .hero .stufe{opacity:0;transform:translateY(18px);animation:aufstehen .8s var(--ease) forwards}
+  .js .hero .stufe:nth-child(2){animation-delay:.12s}
+  .js .hero .stufe:nth-child(3){animation-delay:.24s}
+  .js .hero .stufe:nth-child(4){animation-delay:.36s}
+  .js .hero .stufe:nth-child(5){animation-delay:.48s}
+  .js .hero-buehne{opacity:0;animation:aufstehen 1s .3s var(--ease) forwards}
+  @keyframes aufstehen{to{opacity:1;transform:none}}
+  .foto .hero .stufe,.foto .hero-buehne{opacity:1 !important;transform:none !important;animation:none !important}
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr}
+    .hero{padding-top:6.5rem}
+    .hero-buehne{order:-1;max-height:34svh}
+    .hero-buehne svg{height:100%;width:100%;object-fit:cover}
+  }
+
+  /* ═══════ 6 · VERTRAUENSLEISTE ═══════ */
+  .leiste{background:var(--espresso);color:#EFE6D8;padding-block:var(--sp-4)}
+  .leiste-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp-3)}
+  .leiste h3{font-size:var(--fs-s);color:#fff;font-family:var(--sans);font-weight:600;margin-top:.65rem}
+  .leiste p{font-size:var(--fs-xs);color:#CDBFA9;margin-top:.3rem}
+  .leiste svg{width:30px;height:30px}
+  @media (max-width:900px){.leiste-grid{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:540px){.leiste-grid{grid-template-columns:1fr 1fr;gap:1.2rem}}
+
+  /* ═══════ 7 · ANGEBOTE ═══════ */
+  .karten{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-3);margin-top:var(--sp-5)}
+  .karte{
+    background:#fff;border-radius:var(--radius);padding:2rem 1.7rem 2.2rem;box-shadow:var(--schatten);
+    display:flex;flex-direction:column;gap:.9rem;border-top:3px solid var(--gold);
+    transition:transform .3s var(--ease), box-shadow .3s var(--ease);
+  }
+  .karte:hover{transform:translateY(-4px);box-shadow:0 16px 44px rgba(51,38,28,.14)}
+  .karte .motiv{width:54px;height:54px;border-radius:14px;display:grid;place-items:center;background:var(--sand)}
+  .karte .motiv svg{width:30px;height:30px}
+  .karte h3{font-size:var(--fs-m)}
+  .karte .frage{font-style:italic;font-family:var(--serif);font-weight:400;color:var(--kupfer);font-size:var(--fs-s)}
+  .karte p{font-size:var(--fs-s);color:var(--ink-soft)}
+  .karte .mehr{margin-top:auto;font-weight:600;font-size:var(--fs-s);text-decoration:none;display:inline-flex;gap:.4rem;align-items:center}
+  .angebot-zeile{margin-top:var(--sp-3);text-align:center;color:var(--ink-soft);font-size:var(--fs-s)}
+  @media (max-width:900px){.karten{grid-template-columns:1fr;max-width:480px;margin-inline:auto}}
+
+  /* ═══════ 8 · KURSE & BUCHUNG ═══════ */
+  .kurse{background:var(--sand)}
+  .kursliste{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-2);margin-top:var(--sp-4);list-style:none}
+  .kurs{
+    background:var(--creme);border-radius:var(--radius-s);padding:1.2rem 1.4rem;
+    display:flex;justify-content:space-between;align-items:center;gap:1rem;border:1px solid var(--sand-tief);
+  }
+  .kurs strong{font-weight:600;font-size:var(--fs-s)}
+  .kurs span{font-size:var(--fs-xs);color:var(--ink-soft);white-space:nowrap}
+  .buchen-box{margin-top:var(--sp-4);background:var(--creme);border-radius:var(--radius);padding:2rem;display:grid;grid-template-columns:1fr auto;gap:1.5rem;align-items:center;border:1px solid var(--sand-tief)}
+  .buchen-box p{font-size:var(--fs-s);color:var(--ink-soft)}
+  @media (max-width:760px){.kursliste{grid-template-columns:1fr}.buchen-box{grid-template-columns:1fr}}
+
+  /* ═══════ 9 · FUNDSTÜCK-ZITAT ═══════ */
+  .zitat{background:var(--espresso);position:relative;overflow:hidden}
+  .zitat::before{ /* Fischgrät-Andeutung, sehr dezent */
+    content:"";position:absolute;inset:0;opacity:.05;
+    background-image:repeating-linear-gradient(45deg, #C29B5E 0 2px, transparent 2px 18px),
+                     repeating-linear-gradient(-45deg, #C29B5E 0 2px, transparent 2px 18px);
+  }
+  .zitat blockquote{position:relative;text-align:center;max-width:760px;margin-inline:auto}
+  .zitat .marke-auf{font-family:var(--serif);font-size:5rem;line-height:.6;color:var(--gold);display:block;margin-bottom:1.4rem}
+  .zitat p{font-family:var(--serif);font-style:italic;font-weight:400;font-size:var(--fs-l);color:#F6EFE3;line-height:1.35;max-width:none}
+  .zitat .wer{margin-top:1.6rem;color:#BCA98E;font-size:var(--fs-s)}
+
+  /* ═══════ 10 · ÜBER GWEN ═══════ */
+  .ueber-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+  /* Slot exakt im 2:3-Format des echten Porträts (346633.webp) */
+  .portraet{aspect-ratio:2/3;border-radius:var(--radius);overflow:hidden;box-shadow:var(--schatten);max-width:420px}
+  .portraet svg{width:100%;height:100%}
+  .ueber-text p + p{margin-top:1rem}
+  .ueber-text .merkmale{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:var(--sp-3);padding:0;list-style:none}
+  .ueber-text .merkmale li{font-size:var(--fs-xs);font-weight:600;background:var(--sand);border:1px solid var(--sand-tief);border-radius:999px;padding:.45rem .95rem}
+  @media (max-width:900px){.ueber-grid{grid-template-columns:1fr}.portraet{margin-inline:auto}}
+
+  /* ═══════ 11 · DEIN BESUCH (3 Schritte) ═══════ */
+  .schritte{background:var(--salbei-flaeche)}
+  .schritte-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-3);margin-top:var(--sp-5);counter-reset:schritt}
+  .schritt{background:var(--creme);border-radius:var(--radius);padding:2rem 1.7rem;position:relative;counter-increment:schritt}
+  .schritt::before{
+    content:counter(schritt,decimal-leading-zero);
+    font-family:var(--serif);font-weight:600;font-size:2.6rem;color:var(--gold);display:block;margin-bottom:.8rem;
+  }
+  .schritt h3{font-size:var(--fs-m)}
+  .schritt p{font-size:var(--fs-s);color:var(--ink-soft);margin-top:.6rem}
+  @media (max-width:900px){.schritte-grid{grid-template-columns:1fr;max-width:480px;margin-inline:auto}}
+
+  /* ═══════ 12 · IHHT ═══════ */
+  .ihht-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+  .zellen{aspect-ratio:1/1;max-width:430px;margin-inline:auto;width:100%}
+  /* Zellatmungs-Puls — Motion-Budget Nr. 3 */
+  .js .zelle-ring{transform-origin:center;animation:atmen 5.2s var(--ease) infinite}
+  .js .zelle-ring.r2{animation-delay:1.1s}
+  .js .zelle-ring.r3{animation-delay:2.2s}
+  @keyframes atmen{0%,100%{transform:scale(1);opacity:.55}50%{transform:scale(1.075);opacity:1}}
+  .ihht-fakten{list-style:none;margin-top:var(--sp-3);display:grid;gap:.9rem}
+  .ihht-fakten li{display:flex;gap:.8rem;align-items:flex-start;font-size:var(--fs-s);color:var(--ink-soft)}
+  .ihht-fakten svg{width:20px;height:20px;flex:none;margin-top:.2rem}
+  .hinweis-box{
+    margin-top:var(--sp-3);background:var(--sand);border-left:3px solid var(--gold);
+    border-radius:var(--radius-s);padding:1.1rem 1.3rem;font-size:var(--fs-xs);color:var(--ink-soft);
+  }
+  .ihht-cta{margin-top:var(--sp-3);display:flex;flex-wrap:wrap;gap:1rem;align-items:center}
+  .tel-gross{font-family:var(--serif);font-weight:600;font-size:var(--fs-m);color:var(--ink);text-decoration:none}
+  .tel-gross:hover{color:var(--kupfer)}
+  @media (max-width:900px){.ihht-grid{grid-template-columns:1fr}.zellen{max-width:320px}}
+
+  /* ═══════ 13 · STIMMEN ═══════ */
+  .stimmen{background:var(--sand)}
+  .stimmen-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-3);margin-top:var(--sp-5)}
+  .stimme{background:var(--creme);border-radius:var(--radius);padding:2rem 1.7rem;display:flex;flex-direction:column;gap:1rem;border:1px solid var(--sand-tief)}
+  .stimme .sterne{color:var(--gold);letter-spacing:.18em;font-size:.95rem}
+  .stimme p{font-size:var(--fs-s);font-style:italic;font-family:var(--serif);font-weight:400;line-height:1.55}
+  .stimme .quelle{margin-top:auto;font-size:var(--fs-xs);color:var(--ink-soft)}
+  .stimme .quelle strong{color:var(--ink);font-weight:600;display:block;font-size:var(--fs-s)}
+  @media (max-width:900px){.stimmen-grid{grid-template-columns:1fr;max-width:480px;margin-inline:auto}}
+
+  /* ═══════ 14 · GUTSCHEINE ═══════ */
+  .gutschein-box{
+    background:linear-gradient(135deg, var(--espresso) 0%, #3d2d20 100%);color:#F2E9DA;
+    border-radius:var(--radius);padding:clamp(2rem,5vw,3.5rem);display:grid;grid-template-columns:1fr auto;
+    gap:2rem;align-items:center;position:relative;overflow:hidden;
+  }
+  .gutschein-box::after{content:"";position:absolute;right:-70px;top:-70px;width:240px;height:240px;border-radius:50%;border:1.5px solid rgba(194,155,94,.4)}
+  .gutschein-box::before{content:"";position:absolute;right:-30px;top:-110px;width:240px;height:240px;border-radius:50%;border:1.5px solid rgba(194,155,94,.25)}
+  .gutschein-box h2{color:#fff;font-size:var(--fs-l)}
+  .gutschein-box p{color:#CDBFA9;font-size:var(--fs-s);margin-top:.8rem}
+  .gutschein-box .ab{font-family:var(--serif);color:var(--gold);font-size:var(--fs-m);font-weight:600}
+  @media (max-width:760px){.gutschein-box{grid-template-columns:1fr}}
+
+  /* ═══════ 15 · FAQ ═══════ */
+  .faq-liste{max-width:760px;margin:var(--sp-5) auto 0;display:grid;gap:.9rem}
+  .faq{background:#fff;border-radius:var(--radius-s);border:1px solid var(--sand-tief);overflow:hidden}
+  .faq summary{
+    list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;
+    padding:1.15rem 1.4rem;font-weight:600;font-size:var(--fs-s);min-height:48px;
+  }
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";font-family:var(--serif);font-size:1.5rem;color:var(--kupfer);transition:transform .3s var(--ease);flex:none;line-height:1}
+  .faq[open] summary::after{transform:rotate(45deg)}
+  .faq .antwort{padding:0 1.4rem 1.3rem;font-size:var(--fs-s);color:var(--ink-soft)}
+
+  /* ═══════ 16 · KONTAKT ═══════ */
+  .kontakt{background:var(--sand)}
+  .kontakt-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(2rem,5vw,4rem);margin-top:var(--sp-5)}
+  .kontakt-info{display:grid;gap:1.4rem;align-content:start}
+  .kontakt-zeile{display:flex;gap:1rem;align-items:flex-start}
+  .kontakt-zeile svg{width:22px;height:22px;flex:none;margin-top:.25rem}
+  .kontakt-zeile strong{display:block;font-size:var(--fs-s)}
+  .kontakt-zeile a,.kontakt-zeile span{color:var(--ink-soft);font-size:var(--fs-s)}
+  .formular{background:var(--creme);border-radius:var(--radius);padding:2rem;box-shadow:var(--schatten)}
+  .demo-hinweis{
+    background:var(--salbei-flaeche);border:1px dashed var(--salbei);border-radius:var(--radius-s);
+    padding:.8rem 1.1rem;font-size:var(--fs-xs);color:var(--salbei);font-weight:600;margin-bottom:1.4rem;
+  }
+  .feld{margin-bottom:1.1rem}
+  .feld label{display:block;font-size:var(--fs-xs);font-weight:600;margin-bottom:.4rem}
+  .feld input,.feld select,.feld textarea{
+    width:100%;padding:.85rem 1rem;border:1.5px solid var(--sand-tief);border-radius:var(--radius-s);
+    font-family:var(--sans);font-size:var(--fs-s);background:#fff;color:var(--ink);
+  }
+  .feld input:focus,.feld select:focus,.feld textarea:focus{outline:3px solid var(--kupfer);outline-offset:1px;border-color:var(--kupfer)}
+  .formular .btn{width:100%}
+  .form-erfolg{display:none;background:var(--salbei-flaeche);border-radius:var(--radius-s);padding:1.1rem 1.3rem;font-size:var(--fs-s);color:var(--salbei);margin-top:1rem}
+  .form-erfolg.zeigen{display:block}
+  @media (max-width:900px){.kontakt-grid{grid-template-columns:1fr}}
+
+  /* ═══════ 17 · ANFAHRT ═══════ */
+  .anfahrt-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-4);align-items:center;margin-top:var(--sp-5)}
+  .adresskarte{
+    background:var(--espresso);border-radius:var(--radius);aspect-ratio:16/10;position:relative;overflow:hidden;
+    display:grid;place-items:center;box-shadow:var(--schatten);
+  }
+  .adresskarte svg{position:absolute;inset:0;width:100%;height:100%}
+  .adresskarte .pin{position:relative;text-align:center;color:#F2E9DA;padding:1rem}
+  .adresskarte .pin .gross-a{font-family:var(--serif);font-size:3.2rem;font-weight:600;color:var(--gold);line-height:1}
+  .adresskarte .pin p{font-size:var(--fs-s);margin-top:.5rem;color:#E6D9C4}
+  .anfahrt-fakten{list-style:none;display:grid;gap:1rem}
+  .anfahrt-fakten li{display:flex;gap:.8rem;align-items:flex-start;font-size:var(--fs-s);color:var(--ink-soft)}
+  .anfahrt-fakten svg{width:20px;height:20px;flex:none;margin-top:.2rem}
+  @media (max-width:900px){.anfahrt-grid{grid-template-columns:1fr}}
+
+  /* ═══════ 18 · FOOTER ═══════ */
+  .site-footer{background:var(--espresso);color:#CDBFA9;padding-block:var(--sp-5) var(--sp-4)}
+  .site-footer .marke strong{color:#F2E9DA}
+  .site-footer .marke span{color:#9C8B72}
+  .footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:var(--sp-4)}
+  .site-footer h3{font-family:var(--sans);font-size:var(--fs-s);color:#fff;font-weight:600;margin-bottom:1rem}
+  .site-footer ul{list-style:none;display:grid;gap:.55rem}
+  .site-footer a{color:#CDBFA9;text-decoration:none;font-size:var(--fs-s)}
+  .site-footer a:hover{color:var(--gold)}
+  .site-footer .klein{margin-top:var(--sp-4);padding-top:var(--sp-3);border-top:1px solid rgba(205,191,169,.18);
+    display:flex;flex-wrap:wrap;gap:.8rem 2rem;justify-content:space-between;font-size:var(--fs-xs);color:#9C8B72}
+  .footer-adresse{font-style:normal;font-size:var(--fs-s);line-height:1.8}
+  @media (max-width:760px){.footer-grid{grid-template-columns:1fr}}
+
+  /* ═══════ 19 · MOBILE STICKY-LEISTE ═══════ */
+  .sticky-leiste{
+    position:fixed;bottom:0;inset-inline:0;z-index:90;display:none;
+    background:rgba(42,31,23,.97);backdrop-filter:blur(10px);
+    padding:.5rem max(.5rem, env(safe-area-inset-left)) max(.5rem, env(safe-area-inset-bottom));
+  }
+  .sticky-leiste a{
+    flex:1;display:flex;flex-direction:column;align-items:center;gap:.18rem;text-decoration:none;
+    color:#EFE6D8;font-size:.72rem;font-weight:600;padding:.45rem .2rem;border-radius:10px;min-height:48px;justify-content:center;
+  }
+  .sticky-leiste a:hover{background:rgba(255,255,255,.08);color:#fff}
+  .sticky-leiste svg{width:19px;height:19px}
+  .sticky-leiste .innen{display:flex;gap:.3rem;max-width:560px;margin-inline:auto}
+  @media (max-width:760px){
+    .sticky-leiste{display:block}
+    body{padding-bottom:74px}
+    .site-footer{padding-bottom:calc(var(--sp-4) + 64px)}
+  }
+
+  /* ═══════ 20 · REVEALS & MOTION-DISZIPLIN ═══════ */
+  .js .reveal{opacity:0;transform:translateY(22px);transition:opacity .55s var(--ease), transform .55s var(--ease)}
+  .js .reveal.da{opacity:1;transform:none}
+  .foto .reveal{opacity:1 !important;transform:none !important}
+  @media (prefers-reduced-motion:reduce){
+    .js .reveal{opacity:1;transform:none;transition:none}
+    .js .hero .stufe,.js .hero-buehne{opacity:1;animation:none;transform:none}
+    .js .zelle-ring{animation:none}
+    .btn,.karte{transition:none}
+  }
+
+  /* ═══════ 21 · PRINT (Aushang) ═══════ */
+  @media print{
+    .nav,.sticky-leiste,.hero-buehne,.formular,.gutschein-box,.zitat,.adresskarte{display:none !important}
+    body{background:#fff;color:#000;font-size:11pt;padding-bottom:0}
+    section{padding-block:1rem;page-break-inside:avoid}
+    .hero{min-height:auto;padding-top:1rem}
+    a::after{content:""}
+    .site-footer{background:#fff;color:#000}
+  }
+  </style>
+</head>
+<body>
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
+
+<!-- ═══════ NAVIGATION ═══════ -->
+<nav class="nav" id="navi" aria-label="Hauptnavigation">
+  <div class="wrap nav-inner">
+    <a class="marke" href="#start">
+      <strong>AUTUMNA</strong>
+      <span>Longevity Lounge</span>
+    </a>
+    <button class="burger" aria-expanded="false" aria-controls="menue" aria-label="Menü öffnen">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="menue">
+      <li><a href="#angebot">Angebot</a></li>
+      <li><a href="#kurse">Kurse</a></li>
+      <li><a href="#ihht">IHHT</a></li>
+      <li><a href="#ueber">Über Gwen</a></li>
+      <li><a href="#faq">Fragen</a></li>
+      <li><a class="btn btn-voll" href="#kontakt">Probestunde anfragen</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="inhalt">
+
+<!-- ═══════ HERO ═══════ -->
+<header class="hero" id="start">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow stufe">Katharinenvilla · Landsberg am Lech</p>
+      <h1 class="stufe">Wieder Energie.<br>Wieder Ruhe. <em>Wieder du.</em></h1>
+      <p class="lead stufe">Pilates, Yin Yoga und IHHT-Zelltraining in kleinen Gruppen — in den ruhigen Räumen der AUTUMNA Longevity Lounge.</p>
+      <div class="hero-ctas stufe">
+        <a class="btn btn-voll" href="#kontakt">Probestunde anfragen</a>
+        <a class="btn btn-zart" href="#kurse">Kurse ansehen</a>
+      </div>
+      <ul class="hero-fakten stufe">
+        <li><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 10.5 8 15 17 5" stroke="#9C5530" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Max. 6 Plätze pro Kurs</li>
+        <li><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 10.5 8 15 17 5" stroke="#9C5530" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Tee vor jeder Stunde</li>
+        <li><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 10.5 8 15 17 5" stroke="#9C5530" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>5,0&nbsp;★ · 32 Google-Rezensionen</li>
+      </ul>
+    </div>
+    <!-- HIER: Bei Beauftragung ersetzt das echte Hero-Foto (alt-assets/343942.webp, 3:2) dieses SVG-Motiv -->
+    <div class="hero-buehne" role="img" aria-label="Stilisierte Illustration: Licht fällt durch ein Rundbogenfenster der Katharinenvilla auf Fischgrätparkett">
+      <svg viewBox="0 0 900 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <linearGradient id="wand" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#F6EEE2"/><stop offset="1" stop-color="#EADDC9"/>
+          </linearGradient>
+          <linearGradient id="lichtkegel" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#F3D9A8" stop-opacity=".85"/><stop offset="1" stop-color="#F3D9A8" stop-opacity="0"/>
+          </linearGradient>
+          <linearGradient id="boden" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#C99A66"/><stop offset="1" stop-color="#A87B4D"/>
+          </linearGradient>
+          <pattern id="fischgraet" width="64" height="32" patternUnits="userSpaceOnUse" patternTransform="scale(1.4)">
+            <rect width="64" height="32" fill="none"/>
+            <path d="M0 32 32 0M16 32 48 0M32 32 64 0" stroke="#8F6336" stroke-width="1.1" opacity=".5"/>
+            <path d="M32 32 0 0M48 32 16 0M64 32 32 0" stroke="#7C5026" stroke-width="1.1" opacity=".35"/>
+          </pattern>
+        </defs>
+        <rect width="900" height="430" fill="url(#wand)"/>
+        <rect y="430" width="900" height="170" fill="url(#boden)"/>
+        <rect y="430" width="900" height="170" fill="url(#fischgraet)"/>
+        <rect y="424" width="900" height="10" fill="#FBF4E8" opacity=".7"/>
+        <!-- Rundbogenfenster -->
+        <g transform="translate(560,70)">
+          <path d="M0 360 V120 a110 110 0 0 1 220 0 V360 Z" fill="#FDF6E7"/>
+          <path d="M0 360 V120 a110 110 0 0 1 220 0 V360" fill="none" stroke="#B89265" stroke-width="10"/>
+          <path d="M110 14 V360 M2 170 h216 M14 96 a106 106 0 0 1 192 0" stroke="#C8A87C" stroke-width="5" fill="none"/>
+          <circle cx="62" cy="80" r="30" fill="#F6DFA9" opacity=".9"/>
+        </g>
+        <!-- Lichtkegel auf den Boden -->
+        <path d="M560 430 L500 600 H880 L780 430 Z" fill="url(#lichtkegel)"/>
+        <!-- Pflanze links -->
+        <g transform="translate(120,290)" stroke="#5F6549" stroke-width="6" fill="none" stroke-linecap="round">
+          <path d="M60 140 C 58 90, 30 70, 10 40"/>
+          <path d="M60 140 C 64 85, 90 75, 112 50"/>
+          <path d="M60 140 C 60 100, 60 70, 60 30"/>
+          <path d="M10 40 c -4 14, 4 22, 16 24 M112 50 c 6 12, 0 24, -14 26 M60 30 c -10 8, -8 22, 2 28"/>
+        </g>
+        <ellipse cx="180" cy="445" rx="90" ry="12" fill="#7C5026" opacity=".35"/>
+        <path d="M130 432 h100 l-10 92 h-80 Z" fill="#A4744A"/>
+        <!-- Liege (Andeutung der IHHT-Liege) -->
+        <g transform="translate(280,360)">
+          <path d="M0 78 C 30 70, 60 40, 95 28 C 130 16, 180 12, 215 22 L 222 50 C 180 44, 130 48, 100 60 C 70 72, 40 86, 10 92 Z" fill="#F4ECDF" stroke="#D9CBB4" stroke-width="3"/>
+          <rect x="24" y="88" width="10" height="42" rx="4" fill="#8F6336"/>
+          <rect x="180" y="60" width="10" height="70" rx="4" fill="#8F6336"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════ VERTRAUENSLEISTE ═══════ -->
+<section class="leiste">
+  <h2 class="sr-only">Was AUTUMNA ausmacht</h2>
+  <div class="wrap leiste-grid">
+    <div class="reveal">
+      <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="5" stroke="#C29B5E" stroke-width="2"/><circle cx="21" cy="14" r="4" stroke="#C29B5E" stroke-width="2"/><path d="M4 26c1.5-4 5-6 8-6s7 2 8 6M17 21c3.2-.6 7 .8 8.4 4" stroke="#C29B5E" stroke-width="2" stroke-linecap="round"/></svg>
+      <h3>Max. 6 pro Gruppe</h3>
+      <p>Zeit für dich statt Massenkurs — mit persönlicher Begleitung.</p>
+    </div>
+    <div class="reveal">
+      <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M7 13h14v6a7 7 0 0 1-14 0Z" stroke="#C29B5E" stroke-width="2"/><path d="M21 14h3a3 3 0 0 1 0 6h-3M11 9c0-1.5 1-2 1-3.5M16 9c0-1.5 1-2 1-3.5" stroke="#C29B5E" stroke-width="2" stroke-linecap="round"/></svg>
+      <h3>Ankommen mit Tee</h3>
+      <p>Vor jeder Stunde: Tee, Wasser und einen Moment durchatmen.</p>
+    </div>
+    <div class="reveal">
+      <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="4" y="13" width="5" height="6" rx="1.5" stroke="#C29B5E" stroke-width="2"/><rect x="23" y="13" width="5" height="6" rx="1.5" stroke="#C29B5E" stroke-width="2"/><path d="M9 16h14" stroke="#C29B5E" stroke-width="2"/></svg>
+      <h3>Alles ist da</h3>
+      <p>Matten und hochwertiges Equipment liegen bereit — bring nur dich mit.</p>
+    </div>
+    <div class="reveal">
+      <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="16" r="11" stroke="#C29B5E" stroke-width="2"/><circle cx="16" cy="16" r="6" stroke="#C29B5E" stroke-width="2" opacity=".6"/><circle cx="16" cy="16" r="1.8" fill="#C29B5E"/></svg>
+      <h3>IHHT 1:1 begleitet</h3>
+      <p>Zelltraining im Liegen — persönlich begleitet, mit kostenfreiem Vorgespräch.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ ANGEBOTE ═══════ -->
+<section id="angebot">
+  <div class="wrap">
+    <div class="center reveal">
+      <p class="eyebrow">Dein Angebot</p>
+      <h2>Drei Wege zurück in deine Energie</h2>
+      <p class="sub">Ob in Bewegung oder im Liegen: Bei AUTUMNA geht es nicht um Leistung — sondern darum, dass dein Körper wieder auftanken kann.</p>
+    </div>
+    <div class="karten">
+      <article class="karte reveal">
+        <div class="motiv" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none"><path d="M5 24c5-1 7-6 11-6s6 4 11 3" stroke="#9C5530" stroke-width="2.2" stroke-linecap="round"/><circle cx="9" cy="11" r="3.5" stroke="#9C5530" stroke-width="2.2"/><path d="M13 22c1-3 2-6 0-8" stroke="#9C5530" stroke-width="2.2" stroke-linecap="round"/></svg>
+        </div>
+        <p class="frage">„Ich will mich wieder stark und aufrecht fühlen."</p>
+        <h3>Pilates</h3>
+        <p>Kräftigt die Mitte, entlastet den Rücken, verbessert die Haltung — für alle Level. Sanfter Einstieg gefällig? Soft Pilates nimmt dich bei Mobilität &amp; Stabilität an die Hand.</p>
+        <a class="mehr" href="#kurse">Zu den Kursen<span aria-hidden="true">→</span></a>
+      </article>
+      <article class="karte reveal">
+        <div class="motiv" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none"><path d="M16 5c2 4 7 5 7 11a7 7 0 0 1-14 0c0-6 5-7 7-11Z" stroke="#5F6549" stroke-width="2.2" stroke-linejoin="round"/><path d="M16 26v-9" stroke="#5F6549" stroke-width="2.2" stroke-linecap="round"/></svg>
+        </div>
+        <p class="frage">„Mein Kopf kommt nie zur Ruhe."</p>
+        <h3>Yin Yoga</h3>
+        <p>Lang gehaltene, ruhige Positionen lassen das Nervensystem herunterfahren — sanfte Entspannung für Körper und Seele. Nach Feierabend: After-Work-Relaxation.</p>
+        <a class="mehr" href="#kurse">Zu den Kursen<span aria-hidden="true">→</span></a>
+      </article>
+      <article class="karte reveal">
+        <div class="motiv" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="10" stroke="#9C5530" stroke-width="2.2"/><circle cx="16" cy="16" r="5.5" stroke="#9C5530" stroke-width="2.2" opacity=".55"/><circle cx="16" cy="16" r="1.7" fill="#9C5530"/></svg>
+        </div>
+        <p class="frage">„Ich bin ständig erschöpft — ich will meine Energie zurück."</p>
+        <h3>IHHT-Zelltraining</h3>
+        <p>Höhentraining im Liegen: Über eine Atemmaske wechseln sich sauerstoffarme und sauerstoffreiche Phasen ab — ganz ohne Bewegung, persönlich begleitet.</p>
+        <a class="mehr" href="#ihht">Mehr über IHHT<span aria-hidden="true">→</span></a>
+      </article>
+    </div>
+    <p class="angebot-zeile reveal">Lieber verschenken? <a href="#gutscheine">AUTUMNA-Gutscheine gibt es ab 15&nbsp;€.</a></p>
+  </div>
+</section>
+
+<!-- ═══════ KURSE & BUCHUNG ═══════ -->
+<section class="kurse" id="kurse">
+  <div class="wrap">
+    <div class="center reveal">
+      <p class="eyebrow">Kurse &amp; Termine</p>
+      <h2>Finde deine Stunde</h2>
+      <p class="sub">Alle Kurse finden in kleinen Gruppen statt — du buchst bequem online und siehst sofort, wo noch ein Platz frei ist.</p>
+    </div>
+    <ul class="kursliste reveal">
+      <!-- HIER: Kursliste & Zeiten — Stand 12.06.2026 laut Fyndery-Kursplan (bei Änderungen hier UND im Kalender-Link prüfen) -->
+      <li class="kurs"><strong>Pilates — alle Level</strong><span>Di 18:30 · Fr 17:00</span></li>
+      <li class="kurs"><strong>Soft Pilates: Mobilität &amp; Stabilität</strong><span>Fr 15:45 · für Anfänger</span></li>
+      <li class="kurs"><strong>Yin Yoga: sanfte Entspannung</strong><span>Mi 19:30</span></li>
+      <li class="kurs"><strong>After Work Relaxation</strong><span>Di 16:30</span></li>
+    </ul>
+    <p class="angebot-zeile reveal" style="margin-top:1.2rem">Alle Kurse: <strong>max. 6 Teilnehmende</strong> · Einzeltermin ab 17,50&nbsp;€ · Mehrfachkarten online buchbar</p>
+    <div class="buchen-box reveal">
+      <p><strong>Online buchen wie gewohnt:</strong> Kursplan, freie Plätze und Mehrfachkarten findest du im Buchungskalender von AUTUMNA — er bleibt beim Umstieg auf die neue Website genau derselbe.</p>
+      <a class="btn btn-voll" href="https://www.autumna-landsberg.de/#Kalender" target="_blank" rel="noopener">Kursplan öffnen</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ FUNDSTÜCK-ZITAT ═══════ -->
+<section class="zitat" aria-label="Leitgedanke">
+  <div class="wrap">
+    <blockquote class="reveal">
+      <span class="marke-auf" aria-hidden="true">„</span>
+      <p>Komm zurück in deine Kraft.</p>
+      <div class="wer">— Gwen Herbst, Gründerin der AUTUMNA Longevity Lounge</div>
+    </blockquote>
+  </div>
+</section>
+
+<!-- ═══════ ÜBER GWEN ═══════ -->
+<section id="ueber">
+  <div class="wrap ueber-grid">
+    <!-- HIER: Bei Beauftragung ersetzt Gwens echtes Porträt (alt-assets/346633.webp, 2:3) dieses SVG-Motiv -->
+    <div class="portraet reveal" role="img" aria-label="Stilisierte Illustration: die historische Tür der Katharinenvilla mit Pflanze und warmem Licht">
+      <svg viewBox="0 0 400 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <linearGradient id="pwand" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#F4ECDF"/><stop offset="1" stop-color="#E6D7C0"/>
+          </linearGradient>
+          <linearGradient id="ptuer" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#9C6B3F"/><stop offset="1" stop-color="#7C5026"/>
+          </linearGradient>
+        </defs>
+        <rect width="400" height="600" fill="url(#pwand)"/>
+        <rect y="470" width="400" height="130" fill="#B98A57"/>
+        <path d="M0 470 H400" stroke="#FBF4E8" stroke-width="6" opacity=".6"/>
+        <g transform="translate(60,80)">
+          <path d="M0 390 V90 a140 140 0 0 1 280 0 V390 Z" fill="url(#ptuer)"/>
+          <path d="M0 390 V90 a140 140 0 0 1 280 0 V390" fill="none" stroke="#5E3A18" stroke-width="8"/>
+          <path d="M140 -45 V390 M30 150 h220 M30 260 h220" stroke="#5E3A18" stroke-width="5" opacity=".8"/>
+          <rect x="36" y="156" width="88" height="98" rx="6" fill="#F6DFA9" opacity=".5"/>
+          <rect x="156" y="156" width="88" height="98" rx="6" fill="#F6DFA9" opacity=".35"/>
+          <circle cx="118" cy="316" r="7" fill="#C29B5E"/>
+        </g>
+        <g transform="translate(305,360)" stroke="#5F6549" stroke-width="5" fill="none" stroke-linecap="round">
+          <path d="M30 130 C 26 90, 8 76, -4 50"/>
+          <path d="M30 130 C 34 86, 52 78, 64 54"/>
+          <path d="M-4 50 c -4 12, 2 20, 12 22 M64 54 c 4 12, -2 20, -12 22"/>
+        </g>
+        <path d="M270 492 h120 l-8 70 h-104 Z" fill="#A4744A"/>
+        <circle cx="84" cy="60" r="26" fill="#F6DFA9" opacity=".65"/>
+      </svg>
+    </div>
+    <div class="ueber-text">
+      <p class="eyebrow reveal">Über Gwen</p>
+      <h2 class="reveal">Ein Herzensprojekt in der Katharinenvilla</h2>
+      <div class="reveal">
+        <!-- Texte NEU geschrieben aus Fakten von Altseite, Google Business & Landsberger Tagblatt (12.03.2026) — VOM KUNDEN ZU PRÜFEN -->
+        <p style="margin-top:1.4rem">AUTUMNA ist aus einer sehr persönlichen Erfahrung entstanden: Gwen Herbst weiß selbst, wie es ist, wenn die Kraft nicht zurückkommen will — ihre eigene Long-Covid-Zeit hat sie zum Thema Regeneration gebracht. Über ihren Weg und das IHHT-Zelltraining berichtete im März 2026 auch das <a href="https://www.augsburger-allgemeine.de/landsberg/landsberg-mit-ihht-zu-neu-mehr-leistungssteigerung-eine-therapie-verspricht-hilfe13-03-113608806" target="_blank" rel="noopener">Landsberger Tagblatt</a>.</p>
+        <p>Im Herbst 2025 hat sie die Longevity Lounge in der Katharinenvilla eröffnet — ein Ort, an dem moderne Gesundheits-Anwendungen und echte Ruhe zusammenfinden. Kein Durchgangsstudio, sondern ein Raum zum Ankommen: mit Zeit, Wärme und einer Tasse Tee, bevor es losgeht.</p>
+        <p>Auf der Matte begleiten dich Gwen und Pilates-Trainerin Simone — in Gruppen mit höchstens sechs Teilnehmenden, damit wirklich Zeit für dich bleibt.</p>
+      </div>
+      <ul class="merkmale reveal">
+        <li>Seit Herbst 2025</li>
+        <li>Max. 6 pro Gruppe</li>
+        <li>Persönliche Begleitung</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ DEIN BESUCH ═══════ -->
+<section class="schritte" aria-label="So läuft dein Besuch ab">
+  <div class="wrap">
+    <div class="center reveal">
+      <p class="eyebrow">Dein Besuch</p>
+      <h2>So fühlt sich eine Stunde bei AUTUMNA an</h2>
+    </div>
+    <div class="schritte-grid">
+      <div class="schritt reveal">
+        <h3>Ankommen</h3>
+        <p>Tür auf, Schuhe aus, Tee in die Hand. Bevor irgendetwas „losgeht", darfst du erst einmal da sein.</p>
+      </div>
+      <div class="schritt reveal">
+        <h3>Deine Stunde</h3>
+        <p>Pilates oder Yin Yoga in kleiner Runde — oder dein IHHT-Termin im Liegen, persönlich begleitet. Matten und Equipment liegen bereit.</p>
+      </div>
+      <div class="schritt reveal">
+        <h3>Nachklingen</h3>
+        <p>Kein Abfertigen, kein Rausschieben: Nimm dir den Moment, bevor du zurück in deinen Tag gehst — spürbar ruhiger als davor.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ IHHT ═══════ -->
+<section id="ihht">
+  <div class="wrap ihht-grid">
+    <div>
+      <p class="eyebrow reveal">IHHT-Zelltraining</p>
+      <h2 class="reveal">Training für deine Zellen — im Liegen</h2>
+      <div class="reveal">
+        <p style="margin-top:1.4rem">IHHT steht für Intervall-Hypoxie-Hyperoxie-Training: Über eine Atemmaske wechseln sich sauerstoffärmere und sauerstoffreichere Phasen ab — ähnlich wie beim Höhentraining, nur bequem auf der Liege.</p>
+      </div>
+      <ul class="ihht-fakten reveal">
+        <li><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="#5F6549" stroke-width="1.8"/><path d="M10 6v4l2.5 2.5" stroke="#5F6549" stroke-width="1.8" stroke-linecap="round"/></svg>Eine Sitzung dauert etwa 30–40 Minuten</li>
+        <li><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 16c2-5 4-9 6-9s4 4 6 9" stroke="#5F6549" stroke-width="1.8" stroke-linecap="round"/></svg>Keine Bewegung nötig — du liegst bequem</li>
+        <li><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="7" r="3.2" stroke="#5F6549" stroke-width="1.8"/><path d="M4 17c1.2-3.2 3.4-4.6 6-4.6s4.8 1.4 6 4.6" stroke="#5F6549" stroke-width="1.8" stroke-linecap="round"/></svg>Jeder Termin wird persönlich begleitet</li>
+        <li><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 3v14M3 10h14" stroke="#5F6549" stroke-width="1.8" stroke-linecap="round"/></svg>Viele kommen mit Erschöpfung, Stress oder Schlafthemen</li>
+      </ul>
+      <div class="hinweis-box reveal">
+        <strong>Transparenz:</strong> IHHT ist ein Training, keine Heilbehandlung — es ersetzt keinen Arztbesuch. Ob es für dich passt, klären wir vorab in Ruhe. Über IHHT bei AUTUMNA berichtete das <a href="https://www.augsburger-allgemeine.de/landsberg/landsberg-mit-ihht-zu-neu-mehr-leistungssteigerung-eine-therapie-verspricht-hilfe13-03-113608806" target="_blank" rel="noopener">Landsberger Tagblatt</a> (März 2026).
+      </div>
+      <div class="ihht-cta reveal">
+        <a class="btn btn-voll" href="tel:+491742124714">Kostenfreies Vorgespräch vereinbaren</a>
+        <a class="tel-gross" href="tel:+491742124714">+49&nbsp;174&nbsp;2124714</a>
+      </div>
+    </div>
+    <div class="zellen reveal" role="img" aria-label="Stilisierte Darstellung des Zelltrainings: pulsierende konzentrische Kreise">
+      <svg viewBox="0 0 400 400" aria-hidden="true">
+        <circle class="zelle-ring r3" cx="200" cy="200" r="172" fill="none" stroke="#C29B5E" stroke-width="1.6" opacity=".5"/>
+        <circle class="zelle-ring r2" cx="200" cy="200" r="128" fill="none" stroke="#5F6549" stroke-width="1.8" opacity=".6"/>
+        <circle class="zelle-ring" cx="200" cy="200" r="86" fill="none" stroke="#9C5530" stroke-width="2"/>
+        <circle cx="200" cy="200" r="44" fill="#F1E8DC"/>
+        <circle cx="200" cy="200" r="10" fill="#9C5530"/>
+        <g stroke="#C29B5E" stroke-width="1.4" opacity=".8">
+          <path d="M200 140 v-18M200 278 v-18M140 200 h-18M278 200 h-18" stroke-linecap="round"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ STIMMEN ═══════ -->
+<section class="stimmen" id="stimmen">
+  <div class="wrap">
+    <div class="center reveal">
+      <p class="eyebrow">Stimmen</p>
+      <h2>Was Besucherinnen und Besucher sagen</h2>
+    </div>
+    <div class="stimmen-grid">
+      <!-- HIER: Google-Rezensionen (öffentlich einsehbar) — als Zitate mit Quelle, kein Widget -->
+      <figure class="stimme reveal">
+        <div class="sterne" aria-label="5 von 5 Sternen">★★★★★</div>
+        <p>„Wunderschöne Räumlichkeiten, alles super stilvoll und voller Liebe gestaltet! … Wie ein Zuhause sein, ohne zuhause zu sein."</p>
+        <figcaption class="quelle"><strong>Melanie</strong>Google-Rezension</figcaption>
+      </figure>
+      <figure class="stimme reveal">
+        <div class="sterne" aria-label="5 von 5 Sternen">★★★★★</div>
+        <p>„Der herzliche Empfang von Gwen und die liebevolle Atmosphäre machen jedes Training besonders. Die kleinen Gruppen ermöglichen persönliche Betreuung."</p>
+        <figcaption class="quelle"><strong>Karin</strong>Google-Rezension</figcaption>
+      </figure>
+      <figure class="stimme reveal">
+        <div class="sterne" aria-label="5 von 5 Sternen">★★★★★</div>
+        <p>„Die Räumlichkeiten sind wunderschön — ruhig, stilvoll, mit einer ganz besonderen Wohlfühlatmosphäre. Ich gehe immer entspannt und voller Energie nach Hause."</p>
+        <figcaption class="quelle"><strong>Patricia</strong>Google-Rezension</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ GUTSCHEINE ═══════ -->
+<section id="gutscheine">
+  <div class="wrap">
+    <div class="gutschein-box reveal">
+      <div>
+        <p class="eyebrow" style="color:var(--gold)">Verschenke eine Auszeit</p>
+        <h2>AUTUMNA-Gutscheine</h2>
+        <p>Manchmal ist das schönste Geschenk eine Stunde nur für sich: ein Gutschein für Pilates, Yin Yoga oder eine Auszeit in der Lounge — <span class="ab">ab 15&nbsp;€</span>.</p>
+      </div>
+      <a class="btn btn-hell" href="https://www.autumna-landsberg.de/#Gutscheine" target="_blank" rel="noopener">Gutschein kaufen</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ FAQ ═══════ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="center reveal">
+      <p class="eyebrow">Gute Fragen</p>
+      <h2>Bevor du das erste Mal kommst</h2>
+    </div>
+    <div class="faq-liste reveal">
+      <details class="faq">
+        <summary>Ich war noch nie beim Pilates oder Yoga — kann ich trotzdem kommen?</summary>
+        <div class="antwort">Unbedingt. Die Kurse sind für alle Level offen, und mit Soft Pilates gibt es einen Kurs, der speziell für Einsteigerinnen und Einsteiger gedacht ist. In den kleinen Gruppen bleibt genug Zeit, auf dich einzugehen.</div>
+      </details>
+      <details class="faq">
+        <summary>Was muss ich mitbringen oder anziehen?</summary>
+        <div class="antwort">Nur dich selbst und bequeme Kleidung. Matten, Equipment, Tee und Wasser stehen bereit — alles ist vorbereitet, wenn du kommst.</div>
+      </details>
+      <details class="faq">
+        <summary>Wie buche ich einen Kurs?</summary>
+        <div class="antwort">Über den Online-Kursplan: Kurs auswählen, Termin anklicken, fertig. Dort siehst du auch freie Plätze und kannst Mehrfachkarten kaufen. <a href="https://www.autumna-landsberg.de/#Kalender" target="_blank" rel="noopener">Hier geht's zum Kursplan.</a></div>
+      </details>
+      <details class="faq">
+        <summary>Was genau passiert bei einem IHHT-Termin?</summary>
+        <div class="antwort">Du liegst bequem auf der Liege und atmest über eine Maske abwechselnd sauerstoffärmere und sauerstoffreichere Luft — etwa 30 bis 40 Minuten, die ganze Zeit persönlich begleitet. Vorab gibt es ein kostenfreies 1:1-Vorgespräch, in dem alle Fragen Platz haben.</div>
+      </details>
+      <details class="faq">
+        <summary>Ist IHHT das Richtige für mich?</summary>
+        <div class="antwort">Viele Gäste kommen mit Erschöpfung, Stress oder Schlafthemen — oder einfach aus Interesse an Longevity. Was IHHT für dich tun kann, besprechen wir ehrlich im kostenfreien Vorgespräch. Klar ist: Es ist ein Training und ersetzt keinen Arztbesuch.</div>
+      </details>
+      <details class="faq">
+        <summary>Kann ich AUTUMNA verschenken?</summary>
+        <div class="antwort">Ja — Gutscheine gibt es ab 15&nbsp;€, online erhältlich. Ein schönes Geschenk für Menschen, die sich selten selbst eine Pause gönnen.</div>
+      </details>
+      <details class="faq">
+        <summary>Wo finde ich euch — und wo kann ich parken?</summary>
+        <div class="antwort">In der Katharinenvilla, Katharinenstraße 45 in Landsberg am Lech. Eingang und Parkplätze findest du an der Dominikus-Zimmermann-Straße. <a href="https://www.google.com/maps/search/?api=1&query=Katharinenstra%C3%9Fe%2045%2C%2086899%20Landsberg%20am%20Lech" target="_blank" rel="noopener">Route in Google Maps öffnen</a></div>
+      </details>
+      <details class="faq">
+        <summary>Kann ich mit dem Landsberg-Gutschein bezahlen?</summary>
+        <div class="antwort">Ja — AUTUMNA ist offizielle Akzeptanzstelle des Landsberg-Gutscheins. Lokal schenken, lokal einlösen.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ KONTAKT ═══════ -->
+<section class="kontakt" id="kontakt">
+  <div class="wrap">
+    <div class="center reveal">
+      <p class="eyebrow">Kontakt</p>
+      <h2>Sag einfach Hallo</h2>
+      <p class="sub">Ob Probestunde, IHHT-Vorgespräch oder eine Frage zwischendurch — melde dich, wie es dir am liebsten ist.</p>
+    </div>
+    <div class="kontakt-grid">
+      <div class="kontakt-info reveal">
+        <div class="kontakt-zeile">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z" stroke="#9C5530" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          <div><strong>Am schnellsten: anrufen</strong><a href="tel:+491742124714">+49 174 2124714</a></div>
+        </div>
+        <div class="kontakt-zeile">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5" stroke="#9C5530" stroke-width="1.8"/><path d="m4 7 8 6 8-6" stroke="#9C5530" stroke-width="1.8"/></svg>
+          <div><strong>Oder per E-Mail</strong><a href="mailto:info@autumna-landsberg.de">info@autumna-landsberg.de</a></div>
+        </div>
+        <div class="kontakt-zeile">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-5.6-7-11a7 7 0 0 1 14 0c0 5.4-7 11-7 11Z" stroke="#9C5530" stroke-width="1.8"/><circle cx="12" cy="10" r="2.6" stroke="#9C5530" stroke-width="1.8"/></svg>
+          <div><strong>Vor Ort</strong><span>Katharinenstraße 45, 86899 Landsberg am Lech</span></div>
+        </div>
+        <div class="kontakt-zeile">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="#9C5530" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" stroke="#9C5530" stroke-width="1.8"/><circle cx="17.2" cy="6.8" r="1.1" fill="#9C5530"/></svg>
+          <div><strong>Folge AUTUMNA</strong><a href="https://www.instagram.com/autumna_landsberg/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.facebook.com/profile.php?id=61581112683456" target="_blank" rel="noopener">Facebook</a></div>
+        </div>
+      </div>
+      <form class="formular reveal" id="demo-form" novalidate>
+        <p class="demo-hinweis">Design-Vorschau: Dieses Formular versendet noch nichts. Auf der echten Seite landet deine Nachricht direkt im AUTUMNA-Postfach.</p>
+        <div class="feld">
+          <label for="f-name">Dein Name</label>
+          <input id="f-name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="feld">
+          <label for="f-mail">Deine E-Mail-Adresse</label>
+          <input id="f-mail" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="feld">
+          <label for="f-thema">Worum geht es?</label>
+          <select id="f-thema" name="thema">
+            <option>Probestunde Pilates / Yin Yoga</option>
+            <option>IHHT-Vorgespräch</option>
+            <option>Gutschein</option>
+            <option>Etwas anderes</option>
+          </select>
+        </div>
+        <div class="feld">
+          <label for="f-nachricht">Deine Nachricht</label>
+          <textarea id="f-nachricht" name="nachricht" rows="4"></textarea>
+        </div>
+        <button class="btn btn-voll" type="submit">Nachricht senden</button>
+        <p class="form-erfolg" id="form-erfolg" role="status">Danke dir! In der Live-Version wäre deine Nachricht jetzt unterwegs zu Gwen — und du bekämst persönlich Antwort. (Demo-Modus: Es wurde nichts versendet.)</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ ANFAHRT ═══════ -->
+<section id="anfahrt">
+  <div class="wrap">
+    <div class="center reveal">
+      <p class="eyebrow">Anfahrt</p>
+      <h2>Du findest uns in der Katharinenvilla</h2>
+    </div>
+    <div class="anfahrt-grid">
+      <div class="adresskarte reveal">
+        <svg viewBox="0 0 640 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="640" height="400" fill="#2A1F17"/>
+          <path d="M-20 320 C 120 280, 180 340, 320 300 S 560 260, 660 300" stroke="#3E2F22" stroke-width="60" fill="none"/>
+          <path d="M-20 318 C 120 278, 180 338, 320 298 S 560 258, 660 298" stroke="#4F6457" stroke-width="3.5" fill="none" opacity=".8"/>
+          <g stroke="#3E2F22" stroke-width="2.5" opacity=".85">
+            <path d="M80 0 V400M200 0 V400M340 0 V400M480 0 V400M0 90 H640M0 190 H640M0 290 H640"/>
+          </g>
+          <circle cx="340" cy="190" r="64" fill="none" stroke="#C29B5E" stroke-width="1.4" opacity=".5"/>
+          <circle cx="340" cy="190" r="34" fill="none" stroke="#C29B5E" stroke-width="1.4" opacity=".75"/>
+        </svg>
+        <div class="pin">
+          <div class="gross-a" aria-hidden="true">A</div>
+          <p><strong>AUTUMNA Longevity Lounge</strong><br>Katharinenstraße 45<br>86899 Landsberg am Lech</p>
+        </div>
+      </div>
+      <div>
+        <ul class="anfahrt-fakten reveal">
+          <li><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 18s-6-4.8-6-9.4A6 6 0 0 1 16 8.6C16 13.2 10 18 10 18Z" stroke="#9C5530" stroke-width="1.7"/><circle cx="10" cy="8.6" r="2.2" stroke="#9C5530" stroke-width="1.7"/></svg>Die Katharinenvilla liegt in der Katharinenstraße 45 — wenige Minuten von der Landsberger Altstadt.</li>
+          <li><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="2.5" y="8" width="15" height="6.5" rx="2" stroke="#9C5530" stroke-width="1.7"/><path d="M5 8 6.5 5h7L15 8M5.5 14.5v1.8M14.5 14.5v1.8" stroke="#9C5530" stroke-width="1.7" stroke-linecap="round"/><circle cx="6.6" cy="11.2" r=".9" fill="#9C5530"/><circle cx="13.4" cy="11.2" r=".9" fill="#9C5530"/></svg>Eingang und Parkplätze: an der Dominikus-Zimmermann-Straße.</li>
+          <li><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="#9C5530" stroke-width="1.7"/><path d="M10 6v4l2.5 2.5" stroke="#9C5530" stroke-width="1.7" stroke-linecap="round"/></svg>Komm gern ein paar Minuten früher: Tee und ein ruhiger Moment gehören zu jeder Stunde dazu.</li>
+        </ul>
+        <div style="margin-top:2rem" class="reveal">
+          <a class="btn btn-zart" href="https://www.google.com/maps/search/?api=1&query=Katharinenstra%C3%9Fe%2045%2C%2086899%20Landsberg%20am%20Lech" target="_blank" rel="noopener">Route in Google Maps öffnen</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══════ FOOTER ═══════ -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="marke" href="#start" style="margin-bottom:1.2rem">
+          <strong>AUTUMNA</strong>
+          <span>Longevity Lounge</span>
+        </a>
+        <address class="footer-adresse">
+          Katharinenstraße 45<br>
+          86899 Landsberg am Lech<br>
+          <a href="tel:+491742124714">+49 174 2124714</a><br>
+          <a href="mailto:info@autumna-landsberg.de">info@autumna-landsberg.de</a>
+        </address>
+      </div>
+      <div>
+        <h3>Entdecken</h3>
+        <ul>
+          <li><a href="#angebot">Angebot</a></li>
+          <li><a href="#kurse">Kurse &amp; Buchung</a></li>
+          <li><a href="#ihht">IHHT-Zelltraining</a></li>
+          <li><a href="#gutscheine">Gutscheine</a></li>
+          <li><a href="https://www.instagram.com/autumna_landsberg/" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Rechtliches</h3>
+        <ul>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+        </ul>
+        <p style="font-size:var(--fs-xs);margin-top:1.2rem;color:#9C8B72">Keine Cookies, kein Tracking — diese Seite kommt ohne Banner aus.</p>
+      </div>
+    </div>
+    <div class="klein">
+      <span>© 2026 AUTUMNA · Komm zur Ruhe, komm zu Kräften.</span>
+      <span>Unverbindliche Design-Vorschau · handgebaut in Landsberg am Lech von <a href="mailto:info@lechcode.de">Lechcode</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════ MOBILE STICKY-LEISTE ═══════ -->
+<nav class="sticky-leiste" aria-label="Schnellkontakt">
+  <div class="innen">
+    <a href="tel:+491742124714">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+      Anrufen
+    </a>
+    <a href="https://www.autumna-landsberg.de/#Kalender" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 9.5h17M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.8"/></svg>
+      Kurs buchen
+    </a>
+    <a href="https://www.google.com/maps/search/?api=1&query=Katharinenstra%C3%9Fe%2045%2C%2086899%20Landsberg%20am%20Lech" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-5.6-7-11a7 7 0 0 1 14 0c0 5.4-7 11-7 11Z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="2.6" stroke="currentColor" stroke-width="1.8"/></svg>
+      Anfahrt
+    </a>
+  </div>
+</nav>
+
+<script>
+(function(){
+  'use strict';
+  /* Nav-Blur ab Scroll */
+  var nav = document.getElementById('navi');
+  var aufScroll = function(){ nav.classList.toggle('scrolled', window.scrollY > 24); };
+  window.addEventListener('scroll', aufScroll, {passive:true});
+  aufScroll();
+
+  /* Burger-Menü */
+  var burger = document.querySelector('.burger');
+  var menue = document.getElementById('menue');
+  burger.addEventListener('click', function(){
+    var offen = menue.classList.toggle('offen');
+    burger.setAttribute('aria-expanded', offen ? 'true' : 'false');
+    burger.setAttribute('aria-label', offen ? 'Menü schließen' : 'Menü öffnen');
+    document.body.style.overflow = offen ? 'hidden' : '';
+  });
+  menue.addEventListener('click', function(e){
+    if(e.target.closest('a')){
+      menue.classList.remove('offen');
+      burger.setAttribute('aria-expanded','false');
+      document.body.style.overflow = '';
+    }
+  });
+
+  /* Scroll-Reveals — einmalig, reduced-motion-sicher */
+  var reduziert = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var alle = document.querySelectorAll('.reveal');
+  if(reduziert.matches || !('IntersectionObserver' in window)){
+    alle.forEach(function(el){ el.classList.add('da'); });
+  } else {
+    var io = new IntersectionObserver(function(eintraege){
+      eintraege.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('da'); io.unobserve(e.target); }
+      });
+    }, {rootMargin:'0px 0px -8% 0px', threshold:.12});
+    alle.forEach(function(el){ io.observe(el); });
+  }
+
+  /* Demo-Formular: ehrlich, versendet nichts */
+  var form = document.getElementById('demo-form');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var pflicht = form.querySelectorAll('[required]');
+    var ok = true;
+    pflicht.forEach(function(f){
+      if(!f.value.trim()){ ok = false; f.setAttribute('aria-invalid','true'); f.focus(); }
+      else f.removeAttribute('aria-invalid');
+    });
+    if(ok){ document.getElementById('form-erfolg').classList.add('zeigen'); form.querySelector('button').disabled = true; }
+  });
+})();
+</script>
+</body>
+</html>

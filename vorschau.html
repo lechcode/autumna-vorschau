@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<!-- AUTUMNA — Enthüllungsseite (QR-/Link-Ziel) · DEMO KALT · Lechcode 12.06.2026 -->
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Eine Überraschung für AUTUMNA | Lechcode</title>
+  <meta name="description" content="Wir haben der AUTUMNA Longevity Lounge eine neue Website gebaut — unverbindlich, als Geschenk-Vorschau." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232a1f17'/%3E%3Cpath d='M18 50 V30 a14 14 0 0 1 28 0 V50' fill='none' stroke='%23e9ddcb' stroke-width='3'/%3E%3Cpath d='M32 19 V50 M20 36 h24' stroke='%23c29b5e' stroke-width='1.6' opacity='.85'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="assets/fonts.css">
+  <style>
+    :root{--creme:#FAF6F0;--sand:#F1E8DC;--sand-tief:#E7DBCA;--ink:#33261C;--ink-soft:#5d4d3f;--kupfer:#9C5530;--kupfer-tief:#7f4426;
+      --salbei:#5F6549;--salbei-flaeche:#DCDFD0;--gold:#C29B5E;--espresso:#2A1F17;
+      --serif:'Fraunces','Fraunces Fallback',Georgia,serif;--sans:'Figtree','Figtree Fallback','Helvetica Neue',Arial,sans-serif;
+      --radius:18px;--ease:cubic-bezier(.22,.61,.25,1)}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:var(--sans);background:var(--creme);color:var(--ink);line-height:1.65;font-size:1.0625rem}
+    img{display:block;max-width:100%}
+    .wrap{max-width:980px;margin-inline:auto;padding-inline:clamp(1.1rem,4vw,2rem)}
+    section{padding-block:clamp(3rem,7vw,5rem)}
+    h1,h2{font-family:var(--serif);font-weight:600;line-height:1.12}
+    h1{font-size:clamp(2rem,5.5vw,3.4rem)}
+    h2{font-size:clamp(1.5rem,3.5vw,2.2rem)}
+    .eyebrow{font-size:.85rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--kupfer);margin-bottom:1rem}
+    .lead{font-size:clamp(1.1rem,2.2vw,1.3rem);color:var(--ink-soft);max-width:56ch}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;font-weight:600;font-size:1rem;
+      padding:.95rem 1.7rem;border-radius:999px;text-decoration:none;background:var(--kupfer);color:#fff;border:1.5px solid transparent;min-height:48px}
+    .btn:hover{background:var(--kupfer-tief)}
+    .btn.zart{background:transparent;border-color:var(--kupfer);color:var(--kupfer)}
+    .btn.zart:hover{background:var(--kupfer);color:#fff}
+    .hallo{padding-top:clamp(4rem,9vw,6.5rem);text-align:center}
+    .hallo .lead{margin:1.4rem auto 0}
+    .karte{background:#fff;border-radius:var(--radius);padding:clamp(1.5rem,4vw,2.5rem);box-shadow:0 10px 34px rgba(51,38,28,.10)}
+
+    /* Vorher/Nachher-Slider */
+    .slider{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:0 14px 44px rgba(51,38,28,.16);touch-action:none;cursor:ew-resize}
+    .slider img{width:100%;height:auto;user-select:none;-webkit-user-drag:none}
+    .slider .oben{position:absolute;inset:0;overflow:hidden;width:50%;border-right:3px solid #fff}
+    .slider .oben img{width:100%;max-width:none}
+    .griff{position:absolute;top:0;bottom:0;width:3px;background:#fff;left:50%;pointer-events:none}
+    .griff::after{content:"◂ ▸";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+      background:#fff;color:var(--kupfer);font-size:.8rem;font-weight:700;padding:.55rem .7rem;border-radius:999px;white-space:nowrap;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+    .slider-label{position:absolute;top:14px;font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+      background:rgba(42,31,23,.82);color:#fff;padding:.4rem .8rem;border-radius:999px;pointer-events:none}
+    .slider-label.links{left:14px}.slider-label.rechts{right:14px}
+    .hinweis-mini{font-size:.85rem;color:var(--ink-soft);margin-top:.8rem;text-align:center}
+
+    /* Handy-Reframe */
+    .phones{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,3rem);margin-top:2.5rem;align-items:start}
+    .phone{background:var(--espresso);border-radius:34px;padding:14px;box-shadow:0 18px 50px rgba(42,31,23,.28);max-width:320px;margin-inline:auto}
+    .phone .kerbe{width:86px;height:14px;background:var(--espresso);border-radius:0 0 12px 12px;margin:-2px auto 6px;position:relative;z-index:2}
+    .phone .schirm{border-radius:22px;overflow:hidden}
+    .phone-titel{text-align:center;font-weight:600;margin-top:1rem}
+    .phone-sub{text-align:center;font-size:.85rem;color:var(--ink-soft)}
+    @media (max-width:680px){.phones{grid-template-columns:1fr}}
+
+    /* Tacho */
+    .tacho{background:var(--espresso);color:#EFE6D8;text-align:center}
+    .tacho h2{color:#fff}
+    .tacho-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem}
+    .tacho-zahl{font-family:var(--serif);font-weight:600;font-size:clamp(2.2rem,6vw,3.6rem);color:var(--gold);line-height:1}
+    .tacho-zahl small{font-size:.45em}
+    .tacho-grid p{color:#CDBFA9;font-size:.95rem;margin-top:.5rem}
+    .tacho .quelle{margin-top:2rem;font-size:.8rem;color:#9C8B72}
+    @media (max-width:680px){.tacho-grid{grid-template-columns:1fr}}
+
+    .liste{display:grid;gap:1rem;margin-top:2rem}
+    .punkt{display:flex;gap:1rem;align-items:flex-start;background:#fff;border-radius:14px;padding:1.2rem 1.4rem;border:1px solid var(--sand-tief)}
+    .punkt svg{flex:none;width:22px;height:22px;margin-top:.15rem}
+    .punkt strong{display:block;margin-bottom:.2rem}
+    .punkt p{font-size:.95rem;color:var(--ink-soft)}
+
+    .recht{background:var(--sand)}
+    .heisst{background:var(--salbei-flaeche)}
+
+    .pakete{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem}
+    .paket{background:#fff;border-radius:var(--radius);padding:2rem 1.6rem;border:1px solid var(--sand-tief);display:flex;flex-direction:column;gap:.6rem}
+    .paket.mitte{border:2px solid var(--kupfer);position:relative}
+    .paket.mitte::before{content:"Für AUTUMNA empfohlen";position:absolute;top:-13px;left:50%;transform:translateX(-50%);
+      background:var(--kupfer);color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.06em;padding:.3rem .9rem;border-radius:999px;white-space:nowrap}
+    .paket h3{font-family:var(--serif);font-size:1.25rem}
+    .paket .preis{font-family:var(--serif);font-weight:600;font-size:2rem;color:var(--kupfer)}
+    .paket .preis small{font-size:.5em;color:var(--ink-soft);font-family:var(--sans);font-weight:400}
+    .paket ul{list-style:none;display:grid;gap:.45rem;font-size:.92rem;color:var(--ink-soft);margin-top:.4rem}
+    .paket ul li::before{content:"✓ ";color:var(--salbei);font-weight:700}
+    @media (max-width:760px){.pakete{grid-template-columns:1fr}}
+
+    .schluss{background:var(--espresso);color:#EFE6D8;text-align:center}
+    .schluss h2{color:#fff}
+    .schluss .lead{color:#CDBFA9;margin:1rem auto 2rem}
+    .schluss a.mail{color:var(--gold)}
+    .klein-fuss{background:var(--espresso);border-top:1px solid rgba(205,191,169,.18);color:#9C8B72;font-size:.82rem;text-align:center;padding:1.4rem 1rem}
+    .klein-fuss a{color:#CDBFA9}
+  </style>
+</head>
+<body>
+
+<section class="hallo">
+  <div class="wrap">
+    <p class="eyebrow">Eine kleine Überraschung aus Landsberg</p>
+    <h1>Hallo Frau Herbst —<br>wir haben Ihnen etwas mitgebracht.</h1>
+    <p class="lead">Wir sind Lenny &amp; Michael von Lechcode, einem kleinen Web-Studio hier in Landsberg. Die AUTUMNA Longevity Lounge ist einer der schönsten neuen Orte der Stadt — und wir fanden: Ihre Website sollte genauso viel Ruhe und Klasse ausstrahlen wie Ihre Katharinenvilla. Also haben wir das einfach mal gebaut. Unverbindlich, als Geschenk-Vorschau.</p>
+    <div style="margin-top:2.2rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+      <a class="btn" href="index.html">Ihre neue Seite ansehen</a>
+      <a class="btn zart" href="#vergleich">Erst den Vergleich sehen</a>
+    </div>
+  </div>
+</section>
+
+<section id="vergleich">
+  <div class="wrap">
+    <p class="eyebrow">Vorher / Nachher</p>
+    <h2>Ziehen Sie den Regler — sehen Sie selbst.</h2>
+    <p class="lead" style="margin-top:1rem;margin-bottom:2.5rem">Links Ihre heutige Seite, rechts unser Entwurf — gleicher Inhalt, neue Bühne.</p>
+    <div class="slider" id="slider">
+      <img src="assets/vergleich/neu-desktop.jpg" alt="Neuer Website-Entwurf für AUTUMNA (Desktop-Ansicht)" width="760" height="1900">
+      <div class="oben" id="slider-oben">
+        <img src="assets/vergleich/alt-desktop.jpg" alt="Bisherige Website von AUTUMNA (Desktop-Ansicht)" width="760" height="1900">
+      </div>
+      <div class="griff" id="griff"></div>
+      <span class="slider-label links">Heute</span>
+      <span class="slider-label rechts">Unser Entwurf</span>
+    </div>
+    <p class="hinweis-mini">Tipp: Regler langsam nach links ziehen. Beide Ansichten zeigen denselben Seitenausschnitt.</p>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <p class="eyebrow">Der erste Eindruck entsteht am Handy</p>
+    <h2>So sehen Ihre Besucherinnen Sie heute — und so ab nächster Woche.</h2>
+    <p class="lead" style="margin-top:1rem">Über 60&nbsp;% aller Website-Besuche kommen heute vom Smartphone (StatCounter). Genau dort entscheidet sich, ob jemand bucht.</p>
+    <div class="phones">
+      <div>
+        <div class="phone"><div class="kerbe"></div><div class="schirm">
+          <img src="assets/vergleich/alt-mobil.jpg" alt="Bisherige AUTUMNA-Website auf dem Smartphone" width="390" height="800">
+        </div></div>
+        <p class="phone-titel">Heute</p>
+        <p class="phone-sub">Headline schwer lesbar, Inhalte brauchen fast 10 Sekunden</p>
+      </div>
+      <div>
+        <div class="phone"><div class="kerbe"></div><div class="schirm">
+          <img src="assets/vergleich/neu-mobil.jpg" alt="Neuer AUTUMNA-Entwurf auf dem Smartphone" width="390" height="800">
+        </div></div>
+        <p class="phone-titel">Unser Entwurf</p>
+        <p class="phone-sub">Klare Botschaft, in unter 2 Sekunden da — mit Anruf-Leiste am Daumen</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tacho">
+  <div class="wrap">
+    <p class="eyebrow" style="color:var(--gold)">Gemessen, nicht geschätzt</p>
+    <h2>Vorher: fast 10 Sekunden.<br>Jetzt: unter 2.</h2>
+    <div class="tacho-grid">
+      <div>
+        <div class="tacho-zahl">9,9&nbsp;<small>s</small> → 1,7&nbsp;<small>s</small></div>
+        <p>bis das Wichtigste sichtbar ist (mobil) — <strong>6× schneller</strong></p>
+      </div>
+      <div>
+        <div class="tacho-zahl">17×</div>
+        <p>leichter: 2.184&nbsp;KB → 129&nbsp;KB pro Seitenaufruf</p>
+      </div>
+      <div>
+        <div class="tacho-zahl">100</div>
+        <p>Google-Lighthouse-Performance, mobil <em>und</em> Desktop (vorher: 62)</p>
+      </div>
+    </div>
+    <p class="quelle">Messung: Google Lighthouse, je 3 Läufe (Median), 12.06.2026 · Ihre Seite: autumna-landsberg.de · Entwurf: lokaler Stand vor Veröffentlichung</p>
+  </div>
+</section>
+
+<section class="recht">
+  <div class="wrap">
+    <p class="eyebrow">Sorgfalt im Kleingedruckten</p>
+    <h2>Das haben wir gleich mitkorrigiert</h2>
+    <p class="lead" style="margin-top:1rem">Nichts davon ist dramatisch — aber es sind Dinge, die Abmahn-Anwälte und kritische Kundinnen finden. Auf der neuen Seite sind sie von Anfang an sauber gelöst:</p>
+    <div class="liste">
+      <div class="punkt">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.2 7.6 8 9 4.8-1.4 8-4.5 8-9V6l-8-3Z" stroke="#9C5530" stroke-width="1.8" stroke-linejoin="round"/><path d="m8.7 12 2.2 2.2 4.4-4.6" stroke="#9C5530" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <div><strong>Impressum einer GmbH braucht Handelsregister-Angaben.</strong>
+        <p>Auf Ihrer heutigen Seite fehlen HRB-Nummer und Registergericht (für die Autumna GmbH: HRB 30834, Amtsgericht Augsburg), und als Kontakt steht eine private GMX-Adresse drin. Im neuen Impressum wäre das vollständig und professionell — fertig vorbereitet.</p></div>
+      </div>
+      <div class="punkt">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="#9C5530" stroke-width="1.8"/><path d="M8 12h8M12 8v8" stroke="#9C5530" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <div><strong>Zwei vergessene Platzhalter-Texte stehen live auf Ihrer Seite.</strong>
+        <p>„Ich bin ein Textabschnitt. Klicke hier, um mich zu bearbeiten." erscheint zweimal — mitten in Ihrer Herzensgeschichte. Das passiert mit Baukästen schnell und fällt trotzdem jedem auf. Im Entwurf: durchgeschriebene Texte, von Anfang bis Ende.</p></div>
+      </div>
+      <div class="punkt">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3" stroke="#9C5530" stroke-width="1.8"/><path d="M3 9h18" stroke="#9C5530" stroke-width="1.8"/><circle cx="6.5" cy="6.5" r=".9" fill="#9C5530"/></svg>
+        <div><strong>Cookie-Banner? Braucht die neue Seite gar nicht.</strong>
+        <p>Ihre heutige Seite lädt Bausteine von Fremd-Servern und fragt per Banner nach Cookies. Der Entwurf kommt komplett ohne Cookies, ohne Tracking und ohne externe Server aus — kein Banner, kein Risiko, schnellerer Start.</p></div>
+      </div>
+      <div class="punkt">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 19c2.5-8 5.5-12 8-12s5.5 4 8 12" stroke="#9C5530" stroke-width="1.8" stroke-linecap="round"/><path d="M9 13h6" stroke="#9C5530" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <div><strong>Kleine Stolperer, die Vertrauen kosten.</strong>
+        <p>Die Seite wechselt zwischen Du und Sie, eine Google-Rezension erscheint doppelt, und Ihre Google-Öffnungszeiten (Mo–Fr 9–17 Uhr) decken die Abendkurse bis 20:30 Uhr nicht ab. Alles leicht zu beheben — im Entwurf bereits berücksichtigt.</p></div>
+      </div>
+    </div>
+    <p style="font-size:.85rem;color:var(--ink-soft);margin-top:1.5rem">Transparenz: Das ist keine Rechtsberatung — nur das, was uns beim sorgfältigen Hinsehen aufgefallen ist.</p>
+  </div>
+</section>
+
+<section class="heisst">
+  <div class="wrap">
+    <p class="eyebrow">Was das für Sie heißt</p>
+    <h2>Mehr Zeit für Ihre Gäste, weniger Technik-Kram</h2>
+    <div class="liste">
+      <div class="punkt">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="#5F6549" stroke-width="1.8"/><path d="M12 7v5l3.5 3.5" stroke="#5F6549" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <div><strong>Eine klassische Agentur rechnet vierstellig und in Wochen.</strong>
+        <p>Wir bauen in Tagen — und Sie haben den Kopf frei für das, was nur Sie können: Ihre Lounge.</p></div>
+      </div>
+      <div class="punkt">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-5.6-7-11a7 7 0 0 1 14 0c0 5.4-7 11-7 11Z" stroke="#5F6549" stroke-width="1.8"/><circle cx="12" cy="10" r="2.6" stroke="#5F6549" stroke-width="1.8"/></svg>
+        <div><strong>Ihr Buchungssystem bleibt einfach Ihr Buchungssystem.</strong>
+        <p>Der Entwurf verlinkt nahtlos auf Ihren bestehenden Fyndery-Kursplan — niemand muss umlernen, nichts geht verloren.</p></div>
+      </div>
+      <div class="punkt">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 17 10 11l4 4 6-7" stroke="#5F6549" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 8h6v6" stroke="#5F6549" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div><strong>Jede Woche mit einer langsamen Seite kostet leise Anfragen.</strong>
+        <p>Gerade jetzt, wo in Landsberg große Fitness-Projekte entstehen, lohnt sich ein Auftritt, der Ihre Klasse zeigt — deshalb bauen wir in Tagen, nicht in Monaten.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Damit es perfekt wird</p>
+    <h2>Was wir noch von Ihnen bräuchten</h2>
+    <p class="lead" style="margin-top:1rem">Der Entwurf nutzt aus Respekt vor Urheberrechten bewusst noch keine Fotos Ihrer bisherigen Seite — stattdessen eigene Illustrationen. Die gute Nachricht:</p>
+    <div class="liste">
+      <div class="punkt">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3" stroke="#9C5530" stroke-width="1.8"/><circle cx="9" cy="11" r="2" stroke="#9C5530" stroke-width="1.8"/><path d="m5 19 5-5 3 3 4-4 2 2" stroke="#9C5530" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        <div><strong>Ihre 20 Website-Fotos liegen bei uns schon bereit.</strong>
+        <p>Alle Bild-Plätze im Entwurf haben exakt die Formate Ihrer vorhandenen Fotos — sagen Sie „Ja", bestätigen Sie kurz die Bildrechte (wer hat fotografiert?), und Ihre echten Villa-Bilder sind innerhalb eines Tages drin.</p></div>
+      </div>
+      <div class="punkt">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10" stroke="#9C5530" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <div><strong>Ein paar kurze Antworten.</strong>
+        <p>Preisliste (Mehrfachkarten, IHHT-Pakete)? Soll Trainerin Simone aufs Team? Welche Öffnungszeiten-Logik stimmt? Gibt es das IHHT-Gerät betreffende Angaben, die wir nennen dürfen? — Zehn Minuten am Telefon reichen.</p></div>
+      </div>
+      <div class="punkt">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.2 7.6 8 9 4.8-1.4 8-4.5 8-9V6l-8-3Z" stroke="#9C5530" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        <div><strong>Impressums-Daten bestätigen.</strong>
+        <p>HRB 30834 / Amtsgericht Augsburg und Ihre Wunsch-Kontaktadresse — dann erstellen wir Impressum &amp; Datenschutzerklärung vollständig und die Seite kann live gehen.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="recht" id="pakete">
+  <div class="wrap">
+    <p class="eyebrow">Ehrliche Zahlen</p>
+    <h2>Wenn es Ihnen gefällt — so geht es weiter</h2>
+    <p class="lead" style="margin-top:1rem">Kein Abo-Zwang, keine versteckten Kosten, monatlich kündbare Pflege. Und wenn nicht: Auch gut — dann löschen wir die Vorschau wieder, versprochen.</p>
+    <div class="pakete">
+      <div class="paket">
+        <h3>Starter</h3>
+        <div class="preis">690&nbsp;€ <small>einmalig</small></div>
+        <ul>
+          <li>Diese Seite, fertig poliert</li>
+          <li>Ihre Fotos &amp; Inhalte eingepflegt</li>
+          <li>Impressum &amp; Datenschutz komplett</li>
+          <li>Umzug auf Ihre Domain inklusive</li>
+          <li>Pflege optional: 19&nbsp;€/Monat</li>
+        </ul>
+      </div>
+      <div class="paket mitte">
+        <h3>Praxis</h3>
+        <div class="preis">1.200&nbsp;€ <small>einmalig</small></div>
+        <ul>
+          <li>Alles aus Starter</li>
+          <li>Unterseiten je Angebot (Pilates, Yin Yoga, IHHT) — besser bei Google Landsberg gefunden werden</li>
+          <li>Team-Seite (z.&nbsp;B. mit Simone)</li>
+          <li>Gutschein- &amp; Newsletter-Strecke verfeinert</li>
+          <li>Pflege: 29&nbsp;€/Monat</li>
+        </ul>
+      </div>
+      <div class="paket">
+        <h3>Premium</h3>
+        <div class="preis">ab 1.900&nbsp;€ <small>einmalig</small></div>
+        <ul>
+          <li>Alles aus Praxis</li>
+          <li>Foto-Beratung / neuer Foto-Tag koordiniert</li>
+          <li>Texte gemeinsam verfeinert</li>
+          <li>Laufende Betreuung: 39&nbsp;€/Monat</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="schluss">
+  <div class="wrap">
+    <p class="eyebrow" style="color:var(--gold)">Kein Druck — ehrlich nicht</p>
+    <h2>Schauen Sie in Ruhe. Dann reden wir gern.</h2>
+    <p class="lead">Diese Vorschau ist privat, für Suchmaschinen unsichtbar und völlig unverbindlich. Wenn sie Ihnen gefällt: ein Anruf oder eine Mail genügt. Wenn nicht, löschen wir sie — und Sie haben immerhin eine ehrliche Bestandsaufnahme Ihrer jetzigen Seite gewonnen.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+      <a class="btn" href="index.html">Die neue Seite ansehen</a>
+      <a class="btn zart" style="border-color:var(--gold);color:var(--gold)" href="mailto:info@lechcode.de?subject=AUTUMNA%20Website-Vorschau">info@lechcode.de schreiben</a>
+    </div>
+  </div>
+</section>
+
+<div class="klein-fuss">
+  Unverbindliche Design-Vorschau · erstellt von <strong>Lechcode</strong>, Landsberg am Lech (Schönbach &amp; Storz GbR) · <a href="mailto:info@lechcode.de">info@lechcode.de</a><br>
+  Kein Auftrag der Autumna GmbH · Inhalte basieren auf öffentlich zugänglichen Informationen · diese Vorschau ist nicht öffentlich verlinkt und wird auf Wunsch sofort gelöscht.
+</div>
+
+<script>
+(function(){
+  var slider = document.getElementById('slider');
+  var oben = document.getElementById('slider-oben');
+  var griff = document.getElementById('griff');
+  function setze(x){
+    var r = slider.getBoundingClientRect();
+    var p = Math.max(2, Math.min(98, (x - r.left) / r.width * 100));
+    oben.style.width = p + '%';
+    griff.style.left = p + '%';
+  }
+  var aktiv = false;
+  slider.addEventListener('pointerdown', function(e){ aktiv = true; setze(e.clientX); });
+  window.addEventListener('pointermove', function(e){ if(aktiv) setze(e.clientX); });
+  window.addEventListener('pointerup', function(){ aktiv = false; });
+})();
+</script>
+</body>
+</html>
