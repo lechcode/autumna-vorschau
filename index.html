@@ -69,8 +69,8 @@
   <style>
   /* ═══════ 1 · TOKENS — „Herbstlicht in der Villa" ═══════ */
   :root{
-    --creme:#FAF6F0;          /* Grundton */
-    --sand:#F1E8DC;           /* Karten/Flächen */
+    --creme:#FBF5EA;          /* Grundton (Spätherbst, einen Hauch wärmer) */
+    --sand:#F0E5D4;           /* Karten/Flächen (wärmer) */
     --sand-tief:#E7DBCA;      /* Linien auf Sand */
     --ink:#33261C;            /* Text — warmes Espresso */
     --ink-soft:#5d4d3f;       /* Sekundärtext */
@@ -78,7 +78,7 @@
     --kupfer-tief:#7f4426;    /* Hover */
     --salbei:#5F6549;         /* Sekundärakzent, texttauglich */
     --salbei-flaeche:#DCDFD0; /* helle Salbei-Fläche */
-    --gold:#C29B5E;           /* NUR Deko: Linien, Zitatmarken */
+    --gold:#BD9550;           /* NUR Deko: Linien, Zitatmarken, Blatt-Signatur (etwas tiefer) */
     --espresso:#2A1F17;       /* Footer/dunkle Bühne */
     --weiss:#ffffff;
 
@@ -126,6 +126,11 @@
     color:var(--kupfer);display:flex;align-items:center;gap:.7rem;margin-bottom:var(--sp-2);
   }
   .eyebrow::before{content:"";width:34px;height:1px;background:var(--gold);flex:none}
+  /* Saison-Signatur: feine goldene Blatt-Trennlinie */
+  .blatt-trenner{display:flex;align-items:center;justify-content:center;gap:1.1rem;color:var(--gold);padding-block:var(--sp-3)}
+  .blatt-trenner::before,.blatt-trenner::after{content:"";height:1px;width:min(140px,20vw);background:linear-gradient(90deg,transparent,var(--gold))}
+  .blatt-trenner::after{background:linear-gradient(90deg,var(--gold),transparent)}
+  .blatt-trenner svg{width:26px;height:26px;flex:none;opacity:.9}
   .center .eyebrow{justify-content:center}
   .center{text-align:center}
   .center p{margin-inline:auto}
@@ -162,7 +167,9 @@
   }
   .nav.scrolled{background:rgba(250,246,240,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(51,38,28,.08)}
   .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.9rem}
-  .marke{display:flex;flex-direction:column;line-height:1;text-decoration:none;color:var(--ink)}
+  .marke{display:flex;flex-direction:row;align-items:center;gap:.62rem;line-height:1;text-decoration:none;color:var(--ink)}
+  .marke-blatt{width:25px;height:25px;flex:none;color:var(--gold)}
+  .marke-text{display:flex;flex-direction:column;line-height:1}
   .marke strong{font-family:var(--serif);font-weight:600;font-size:1.45rem;letter-spacing:.12em}
   .marke span{font-size:.58rem;letter-spacing:.34em;text-transform:uppercase;color:var(--ink-soft);margin-top:.32rem}
   .nav-links{display:flex;align-items:center;gap:1.6rem;list-style:none}
@@ -194,7 +201,7 @@
   }
   .foto .hero{min-height:auto}
   .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
-  .hero h1{font-size:var(--fs-hero);max-width:13ch}
+  .hero h1{font-size:var(--fs-hero);max-width:13ch;letter-spacing:-.022em;line-height:1.06}
   .hero h1 em{font-style:italic;font-weight:400;color:var(--kupfer)}
   .hero .lead{font-size:var(--fs-m);color:var(--ink-soft);margin-top:var(--sp-3);max-width:46ch}
   .hero-ctas{display:flex;flex-wrap:wrap;gap:1rem;margin-top:var(--sp-4)}
@@ -457,8 +464,8 @@
 <nav class="nav" id="navi" aria-label="Hauptnavigation">
   <div class="wrap nav-inner">
     <a class="marke" href="#start">
-      <strong>AUTUMNA</strong>
-      <span>Longevity Lounge</span>
+      <svg class="marke-blatt" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2.5C7.6 6.4 5.7 12.2 12 21.5 18.3 12.2 16.4 6.4 12 2.5Z" stroke="currentColor" stroke-width="1.4"/><path d="M12 5V20" stroke="currentColor" stroke-width="1"/><path d="M12 10.5c1.5-1.1 2.9-1.5 4-1.4M12 14c-1.5-1.1-2.9-1.5-4-1.4" stroke="currentColor" stroke-width=".9" stroke-linecap="round"/></svg>
+      <div class="marke-text"><strong>AUTUMNA</strong><span>Longevity Lounge</span></div>
     </a>
     <button class="burger" aria-expanded="false" aria-controls="menue" aria-label="Menü öffnen">
       <span></span><span></span><span></span>
@@ -520,9 +527,9 @@
       <p>Vor jeder Stunde: Tee, Wasser und einen Moment durchatmen.</p>
     </div>
     <div class="reveal">
-      <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="4" y="13" width="5" height="6" rx="1.5" stroke="#C29B5E" stroke-width="2"/><rect x="23" y="13" width="5" height="6" rx="1.5" stroke="#C29B5E" stroke-width="2"/><path d="M9 16h14" stroke="#C29B5E" stroke-width="2"/></svg>
-      <h3>Alles ist da</h3>
-      <p>Matten und hochwertiges Equipment liegen bereit — bring nur dich mit.</p>
+      <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 4l3.4 7 7.6.9-5.7 5.1 1.6 7.6L16 27.6 8.5 31.7l1.6-7.6L4.4 19l7.6-.9z" stroke="#BD9550" stroke-width="2" stroke-linejoin="round"/></svg>
+      <h3>5,0 ★ auf Google</h3>
+      <p>32 Gäste haben uns die volle Punktzahl gegeben — komm vorbei und spür warum.</p>
     </div>
     <div class="reveal">
       <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="16" r="11" stroke="#C29B5E" stroke-width="2"/><circle cx="16" cy="16" r="6" stroke="#C29B5E" stroke-width="2" opacity=".6"/><circle cx="16" cy="16" r="1.8" fill="#C29B5E"/></svg>
@@ -618,6 +625,8 @@
     </blockquote>
   </div>
 </section>
+
+<div class="blatt-trenner" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2.5C7.6 6.4 5.7 12.2 12 21.5 18.3 12.2 16.4 6.4 12 2.5Z" stroke="currentColor" stroke-width="1.4"/><path d="M12 5V20" stroke="currentColor" stroke-width="1"/></svg></div>
 
 <!-- ═══════ ÜBER GWEN ═══════ -->
 <section id="ueber">
@@ -912,8 +921,8 @@
     <div class="footer-grid">
       <div>
         <a class="marke" href="#start" style="margin-bottom:1.2rem">
-          <strong>AUTUMNA</strong>
-          <span>Longevity Lounge</span>
+          <svg class="marke-blatt" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2.5C7.6 6.4 5.7 12.2 12 21.5 18.3 12.2 16.4 6.4 12 2.5Z" stroke="currentColor" stroke-width="1.4"/><path d="M12 5V20" stroke="currentColor" stroke-width="1"/><path d="M12 10.5c1.5-1.1 2.9-1.5 4-1.4M12 14c-1.5-1.1-2.9-1.5-4-1.4" stroke="currentColor" stroke-width=".9" stroke-linecap="round"/></svg>
+          <div class="marke-text"><strong>AUTUMNA</strong><span>Longevity Lounge</span></div>
         </a>
         <address class="footer-adresse">
           Katharinenstraße 45<br>
